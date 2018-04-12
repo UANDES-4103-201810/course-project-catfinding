@@ -8,6 +8,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :tittle
       t.text :description
       t.string :video
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
