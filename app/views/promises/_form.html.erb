@@ -26,6 +26,16 @@
     <%= form.text_area :description %>
   </div>
 
+  <div class="field">
+    <%= form.label :etd %>
+    <%= form.date_select :etd %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_id %>
+    <%= form.text_field :project_id %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

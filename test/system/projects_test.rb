@@ -14,13 +14,15 @@ class ProjectsTest < ApplicationSystemTestCase
     visit projects_url
     click_on "New Project"
 
-    fill_in "Category", with: @project.category
+    fill_in "Approved", with: @project.approved
+    fill_in "Category", with: @project.category_id
     fill_in "Currentamount", with: @project.currentamount
     fill_in "Deadline", with: @project.deadline
     fill_in "Description", with: @project.description
     fill_in "Goalamount", with: @project.goalamount
+    fill_in "Markdown", with: @project.markdown
+    fill_in "Pendingapproval", with: @project.pendingapproval
     fill_in "Tittle", with: @project.tittle
-    fill_in "Video", with: @project.video
     click_on "Create Project"
 
     assert_text "Project was successfully created"
@@ -31,13 +33,15 @@ class ProjectsTest < ApplicationSystemTestCase
     visit projects_url
     click_on "Edit", match: :first
 
-    fill_in "Category", with: @project.category
+    fill_in "Approved", with: @project.approved
+    fill_in "Category", with: @project.category_id
     fill_in "Currentamount", with: @project.currentamount
     fill_in "Deadline", with: @project.deadline
     fill_in "Description", with: @project.description
     fill_in "Goalamount", with: @project.goalamount
+    fill_in "Markdown", with: @project.markdown
+    fill_in "Pendingapproval", with: @project.pendingapproval
     fill_in "Tittle", with: @project.tittle
-    fill_in "Video", with: @project.video
     click_on "Update Project"
 
     assert_text "Project was successfully updated"

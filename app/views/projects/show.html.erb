@@ -1,28 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Category:</strong>
-  <%= @project.category %>
-</p>
-
-<p>
-  <strong>Deadline:</strong>
-  <%= @project.deadline %>
-</p>
-
-<p>
-  <strong>Currentamount:</strong>
-  <%= @project.currentamount %>
-</p>
-
-<p>
-  <strong>Goalamount:</strong>
-  <%= @project.goalamount %>
-</p>
-
-<p>
   <strong>Tittle:</strong>
   <%= @project.tittle %>
+</p>
+
+<p>
+  <strong>Markdown:</strong>
+  <%= @project.markdown %>
 </p>
 
 <p>
@@ -31,8 +16,33 @@
 </p>
 
 <p>
-  <strong>Video:</strong>
-  <%= @project.video %>
+  <strong>Goalamount:</strong>
+  <%= @project.goalamount %>
+</p>
+
+<p>
+  <strong>Currentamount:</strong>
+  <%= @project.currentamount %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @project.approved %>
+</p>
+
+<p>
+  <strong>Pendingapproval:</strong>
+  <%= @project.pendingapproval %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @project.deadline %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @project.category %>
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

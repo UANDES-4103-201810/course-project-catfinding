@@ -1,15 +1,13 @@
 class User < ApplicationRecord
-  has_many :projects
   has_many :userpasswords
-
-  validates :name, length: {minimum: 3}
+  validates :name, length: {minimum: 2}
   validates :mail, presence: true, format: {with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/}
   validate :validate_age
-  validates :address, length: {minimum: 3}
+  validates :address, length: {minimum: 5}
 
   def validate_age
     if birthday.present? && birthday > 14
-      errors.add(:birthday, 'You should be over 18 years old.')
+      errors.add(:birthday, 'You should be over 14 years old.')
     end
   end
 end

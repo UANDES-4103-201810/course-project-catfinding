@@ -1,19 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  category: MyString
-  deadline: 2018-04-12 11:47:23
-  currentamount: 1
-  goalamount: 1
   tittle: MyString
+  markdown: MyText
   description: MyText
-  video: MyString
+  goalamount: 1
+  currentamount: 1
+  approved: false
+  pendingapproval: false
+  deadline: 2018-04-12
+  category: one
 
 two:
-  category: MyString
-  deadline: 2018-04-12 11:47:23
-  currentamount: 1
-  goalamount: 1
   tittle: MyString
+  markdown: MyText
   description: MyText
-  video: MyString
+  goalamount: 1
+  currentamount: 1
+  approved: false
+  pendingapproval: false
+  deadline: 2018-04-12
+  category: two

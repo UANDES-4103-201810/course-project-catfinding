@@ -5,13 +5,15 @@
 <table>
   <thead>
     <tr>
-      <th>Category</th>
-      <th>Deadline</th>
-      <th>Currentamount</th>
-      <th>Goalamount</th>
       <th>Tittle</th>
+      <th>Markdown</th>
       <th>Description</th>
-      <th>Video</th>
+      <th>Goalamount</th>
+      <th>Currentamount</th>
+      <th>Approved</th>
+      <th>Pendingapproval</th>
+      <th>Deadline</th>
+      <th>Category</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,13 +21,15 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.category %></td>
-        <td><%= project.deadline %></td>
-        <td><%= project.currentamount %></td>
-        <td><%= project.goalamount %></td>
         <td><%= project.tittle %></td>
+        <td><%= project.markdown %></td>
         <td><%= project.description %></td>
-        <td><%= project.video %></td>
+        <td><%= project.goalamount %></td>
+        <td><%= project.currentamount %></td>
+        <td><%= project.approved %></td>
+        <td><%= project.pendingapproval %></td>
+        <td><%= project.deadline %></td>
+        <td><%= project.category %></td>
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>

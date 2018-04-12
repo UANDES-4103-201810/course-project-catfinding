@@ -6,13 +6,13 @@
 </p>
 
 <p>
-  <strong>Username:</strong>
-  <%= @user.username %>
+  <strong>Address:</strong>
+  <%= @user.address %>
 </p>
 
 <p>
-  <strong>Mail:</strong>
-  <%= @user.mail %>
+  <strong>Email:</strong>
+  <%= @user.email %>
 </p>
 
 <p>
@@ -26,8 +26,13 @@
 </p>
 
 <p>
-  <strong>Lastlogin:</strong>
-  <%= @user.lastlogin %>
+  <strong>Laslogin:</strong>
+  <%= @user.laslogin %>
+</p>
+
+<p>
+  <strong>Isadmin:</strong>
+  <%= @user.isadmin %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

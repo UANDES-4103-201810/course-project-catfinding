@@ -17,7 +17,7 @@ class UserpasswordsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create userpassword" do
     assert_difference('Userpassword.count') do
-      post userpasswords_url, params: { userpassword: { password: @userpassword.password } }
+      post userpasswords_url, params: { userpassword: { password: @userpassword.password, user_id: @userpassword.user_id } }
     end
 
     assert_redirected_to userpassword_url(Userpassword.last)
@@ -34,7 +34,7 @@ class UserpasswordsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update userpassword" do
-    patch userpassword_url(@userpassword), params: { userpassword: { password: @userpassword.password } }
+    patch userpassword_url(@userpassword), params: { userpassword: { password: @userpassword.password, user_id: @userpassword.user_id } }
     assert_redirected_to userpassword_url(@userpassword)
   end
 

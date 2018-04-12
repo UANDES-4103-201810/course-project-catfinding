@@ -2,14 +2,6 @@
 
 one:
   name: MyString
-  amount: 1
-  description: MyText
-  etd: 2018-04-12
-  project: one
 
 two:
   name: MyString
-  amount: 1
-  description: MyText
-  etd: 2018-04-12
-  project: two

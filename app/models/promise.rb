@@ -7,7 +7,8 @@ class Promise < ApplicationRecord
 
   def promise0
     if amount < 0 or amount = 0
-      errors.add(:amount, "Promises can't cost 0 or less")
+      errors.add(:amount, "Promise amount is invalid")
     end
   end
+
 end

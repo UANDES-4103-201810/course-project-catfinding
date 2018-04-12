@@ -17,7 +17,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create project" do
     assert_difference('Project.count') do
-      post projects_url, params: { project: { category: @project.category, currentamount: @project.currentamount, deadline: @project.deadline, description: @project.description, goalamount: @project.goalamount, tittle: @project.tittle, video: @project.video } }
+      post projects_url, params: { project: { approved: @project.approved, category_id: @project.category_id, currentamount: @project.currentamount, deadline: @project.deadline, description: @project.description, goalamount: @project.goalamount, markdown: @project.markdown, pendingapproval: @project.pendingapproval, tittle: @project.tittle } }
     end
 
     assert_redirected_to project_url(Project.last)
@@ -34,7 +34,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update project" do
-    patch project_url(@project), params: { project: { category: @project.category, currentamount: @project.currentamount, deadline: @project.deadline, description: @project.description, goalamount: @project.goalamount, tittle: @project.tittle, video: @project.video } }
+    patch project_url(@project), params: { project: { approved: @project.approved, category_id: @project.category_id, currentamount: @project.currentamount, deadline: @project.deadline, description: @project.description, goalamount: @project.goalamount, markdown: @project.markdown, pendingapproval: @project.pendingapproval, tittle: @project.tittle } }
     assert_redirected_to project_url(@project)
   end
 

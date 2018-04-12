@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Password</th>
+      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
     <% @userpasswords.each do |userpassword| %>
       <tr>
         <td><%= userpassword.password %></td>
+        <td><%= userpassword.user %></td>
         <td><%= link_to 'Show', userpassword %></td>
         <td><%= link_to 'Edit', edit_userpassword_path(userpassword) %></td>
         <td><%= link_to 'Destroy', userpassword, method: :delete, data: { confirm: 'Are you sure?' } %></td>

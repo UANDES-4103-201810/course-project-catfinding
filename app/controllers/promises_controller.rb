@@ -69,6 +69,6 @@ class PromisesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promise_params
-      params.require(:promise).permit(:name, :amount, :description)
+      params.require(:promise).permit(:name, :amount, :description, :etd, :project_id)
     end
 end

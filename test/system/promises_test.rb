@@ -16,7 +16,9 @@ class PromisesTest < ApplicationSystemTestCase
 
     fill_in "Amount", with: @promise.amount
     fill_in "Description", with: @promise.description
+    fill_in "Etd", with: @promise.etd
     fill_in "Name", with: @promise.name
+    fill_in "Project", with: @promise.project_id
     click_on "Create Promise"
 
     assert_text "Promise was successfully created"
@@ -29,7 +31,9 @@ class PromisesTest < ApplicationSystemTestCase
 
     fill_in "Amount", with: @promise.amount
     fill_in "Description", with: @promise.description
+    fill_in "Etd", with: @promise.etd
     fill_in "Name", with: @promise.name
+    fill_in "Project", with: @promise.project_id
     click_on "Update Promise"
 
     assert_text "Promise was successfully updated"

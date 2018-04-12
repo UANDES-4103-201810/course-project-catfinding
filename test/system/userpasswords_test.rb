@@ -15,6 +15,7 @@ class UserpasswordsTest < ApplicationSystemTestCase
     click_on "New Userpassword"
 
     fill_in "Password", with: @userpassword.password
+    fill_in "User", with: @userpassword.user_id
     click_on "Create Userpassword"
 
     assert_text "Userpassword was successfully created"
@@ -26,6 +27,7 @@ class UserpasswordsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Password", with: @userpassword.password
+    fill_in "User", with: @userpassword.user_id
     click_on "Update Userpassword"
 
     assert_text "Userpassword was successfully updated"
