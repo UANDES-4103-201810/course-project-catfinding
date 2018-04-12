@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @userpassword.password %>
+</p>
+
+<%= link_to 'Edit', edit_userpassword_path(@userpassword) %> |
+<%= link_to 'Back', userpasswords_path %>

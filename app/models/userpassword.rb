@@ -1,0 +1,2 @@
+class Userpassword < ApplicationRecord
+end
