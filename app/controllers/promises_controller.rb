@@ -10,6 +10,10 @@ class PromisesController < ApplicationController
   # GET /promises/1
   # GET /promises/1.json
   def show
+    @promise = Promise.find(params[:id])
+    respond_to do |format|
+      format.json { render json: @user.to_json}
+    end
   end
 
   # GET /promises/new

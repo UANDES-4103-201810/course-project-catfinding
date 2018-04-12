@@ -26,12 +26,6 @@ Rails.application.routes.draw do
 
   get "/categories/:id", to: "categories#show"
 
-  post "/categories", to: "categories#create"
-
-  delete "/categories/:id", to: "categories#destroy"
-
-  patch "/categories/:id", to: "categories#update"
-
   get "/userpasswords/:id", to: "userpasswords#show"
 
   post "/userpasswords", to: "userpasswords#create"
@@ -40,10 +34,5 @@ Rails.application.routes.draw do
 
   patch "/userpasswords/:id", to: "userpasswords#update"
 
-  resources :promises
-  resources :projects
-  resources :categories
-  resources :userpasswords
-  resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

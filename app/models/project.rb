@@ -13,4 +13,7 @@ class Project < ApplicationRecord
     end
   end
 
+  after_create do
+    puts "You have created a project"
+  end
 end
