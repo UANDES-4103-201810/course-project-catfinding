@@ -9,6 +9,8 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.text :description
       t.string :video
       t.references :user, foreign_key: true
+      t.boolean :aprovation
+      t.boolean :pendingaprovation
 
       t.timestamps
     end
