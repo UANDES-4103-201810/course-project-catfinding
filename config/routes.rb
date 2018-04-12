@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :admins
   resources :userpasswords
   resources :promises
   resources :projects

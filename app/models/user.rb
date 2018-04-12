@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_many :projects
   has_many :userpasswords
 
-  validates :username, length: {minimum: 4}
+  validates :name, length: {minimum: 3}
   validates :mail, presence: true, format: {with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/}
   validate :validate_age
   validates :address, length: {minimum: 3}
