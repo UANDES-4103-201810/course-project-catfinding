@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
   resources :users
   resources :projects
   resources :categories
   resources :promises
   resources :userpasswords
+  resources :welcome
+
+  get "/", to: "welcome#index"
 
   get "/users/:id", to: "users#show"
 
