@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :address, length: {minimum: 5}
 
   def validate_age
-    if birthday.present? && birthday > 14
+    if birthday.present? && (birthday-DateTime.now.to_date > 14)
       errors.add(:birthday, 'You should be over 14 years old.')
     end
   end
