@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     respond_to do |format|
-      format.json { render json: @user.to_json}
+      format.json { render json: @ticket.to_json}
     end
   end
 

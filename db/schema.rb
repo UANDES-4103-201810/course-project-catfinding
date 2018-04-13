@@ -10,15 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_12_143517) do
+ActiveRecord::Schema.define(version: 2018_04_12_215454) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "tittle"
+    t.text "markdown"
+    t.text "description"
+    t.integer "goalamount"
+    t.integer "currentamount"
+    t.boolean "approved"
+    t.boolean "pendingapproval"
+    t.date "deadline"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_projects_on_category_id"
+  end
+
+  create_table "promises", force: :cascade do |t|
+    t.string "name"
+    t.integer "amount"
+    t.text "description"
+    t.date "etd"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_promises_on_project_id"
+  end
+
+  create_table "userpasswords", force: :cascade do |t|
+    t.string "password"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_userpasswords_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "username"
-    t.string "mail"
+    t.string "address"
+    t.string "email"
     t.date "birthday"
     t.text "description"
-    t.datetime "lastlogin"
+    t.datetime "laslogin"
+    t.boolean "isadmin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

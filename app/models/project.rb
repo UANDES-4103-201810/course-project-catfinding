@@ -6,7 +6,7 @@ class Project < ApplicationRecord
   validates :tittle, length: {minimum: 3}
   validates :markdown, length: {minimum: 3}
 
-  validate date_cannot_be_in_the_past
+  validate :date_cannot_be_in_the_past
   def date_cannot_be_in_the_past
     if deadline.present? && deadline < Date.today
       errors.add(:start_date, "Can't be in the past")

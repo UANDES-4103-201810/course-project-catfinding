@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :projects
+  resources :categories
+  resources :promises
+  resources :userpasswords
 
   get "/users/:id", to: "users#show"
+
+  get "/users", to: "users#index"
 
   post "/users", to: "users#create"
 

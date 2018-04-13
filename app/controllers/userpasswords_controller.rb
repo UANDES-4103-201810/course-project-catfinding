@@ -10,10 +10,11 @@ class UserpasswordsController < ApplicationController
   # GET /userpasswords/1
   # GET /userpasswords/1.json
   def show
-    @pUserpassword = Userpassword.find(params[:id])
+    @Userpassword = Userpassword.find(params[:id])
     respond_to do |format|
-      format.json { render json: @user.to_json}
+      format.json { render json: @ticket.to_json}
     end
+
   end
 
   # GET /userpasswords/new
