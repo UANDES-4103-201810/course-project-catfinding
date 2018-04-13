@@ -1,13 +1,14 @@
 class Promise < ApplicationRecord
   belongs_to :project
+  validates :name, length: {minimum: 3}
 
-  validate :promise0
   validates :description, length: {minimum: 20}
+  validates :amount, numericality: {greater_than: 0}
 
-
-  def promise0
-    if amount < 0 or amount == 0
-      errors.add(:amount, "Promise amount is invalid")
+  validate :date_cannot_be_in_the_past
+  def date_cannot_be_in_the_past
+    if etd.present? && etd < Date.today
+      errors.add(:etd, "Can't be in the past")
     end
   end
 
