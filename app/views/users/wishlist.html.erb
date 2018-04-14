@@ -1,4 +1,9 @@
 <h1>Wishlist</h1>
 
+<tbody>
+<% @projects.each do |project| %>
+  <li><%= project.id %></li>
+<% end %>
+</tbody>
 
 <%= link_to 'Back', users_path %>

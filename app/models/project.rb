@@ -5,6 +5,7 @@ class Project < ApplicationRecord
   validates :goalamount, numericality: {greater_than: 0}
   validates :tittle, length: {minimum: 3}
   validates :markdown, length: {minimum: 3}
+  attr_accessor :user_id
 
   validate :date_cannot_be_in_the_past
   def date_cannot_be_in_the_past

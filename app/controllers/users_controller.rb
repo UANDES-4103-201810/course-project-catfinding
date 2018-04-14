@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def wishlist
-    @user = User.find(params[:id])
+    @projects = UserProject.where(user_id:params[:id])
 
   end
 

@@ -4,6 +4,7 @@
 #We strongly recommend this ( https://www.youtube.com/watch?v=2s4slliAtQU ) during the correction
 #We think that categories should only be managed by owners, so we simply eliminated the edit/delete options, is intended
 #There's no admins for now so no one can be admin. (even if you try)
+#The numbers displayed in wishlist are the projects id
 #Salutations
 
 This README would normally document whatever steps are necessary to get the
