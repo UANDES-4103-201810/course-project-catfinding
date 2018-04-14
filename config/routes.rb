@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get "/users", to: "users#index"
 
+  get "/users/:id/wishlist", to: "users#wishlist"
+
   post "/users", to: "users#create"
 
   delete "/users/:id", to: "users#destroy"

@@ -14,6 +14,11 @@ class UsersController < ApplicationController
 
   end
 
+  def wishlist
+    @user = User.find(params[:id])
+
+  end
+
   # GET /users/new
   def new
     @user = User.new

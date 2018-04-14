@@ -10,6 +10,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.boolean :pendingapproval
       t.date :deadline
       t.references :category, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
