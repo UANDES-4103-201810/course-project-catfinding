@@ -1,0 +1,37 @@
+<%= form_with(model: wishlisttoproject, local: true) do |form| %>
+  <% if wishlisttoproject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wishlisttoproject.errors.count, "error") %> prohibited this wishlisttoproject from being saved:</h2>
+
+      <ul>
+      <% wishlisttoproject.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :rails %>
+    <%= form.text_field :rails %>
+  </div>
+
+  <div class="field">
+    <%= form.label :generate %>
+    <%= form.text_field :generate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_to_wishlist %>
+    <%= form.text_field :project_to_wishlist %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

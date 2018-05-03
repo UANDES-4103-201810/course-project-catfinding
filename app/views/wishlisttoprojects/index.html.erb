@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wishlisttoprojects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rails</th>
+      <th>Generate</th>
+      <th>Model</th>
+      <th>Project to wishlist</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wishlisttoprojects.each do |wishlisttoproject| %>
+      <tr>
+        <td><%= wishlisttoproject.rails %></td>
+        <td><%= wishlisttoproject.generate %></td>
+        <td><%= wishlisttoproject.model %></td>
+        <td><%= wishlisttoproject.project_to_wishlist %></td>
+        <td><%= link_to 'Show', wishlisttoproject %></td>
+        <td><%= link_to 'Edit', edit_wishlisttoproject_path(wishlisttoproject) %></td>
+        <td><%= link_to 'Destroy', wishlisttoproject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wishlisttoproject', new_wishlisttoproject_path %>
