@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :wishlisttoprojects
+  resources :wishlists
+  resources :user_roles
   devise_for :users
   get 'welcome/index'
   resources :users

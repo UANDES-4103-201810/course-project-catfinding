@@ -9,6 +9,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.string :phone
       t.string :gender
+      t.string :adress
+      t.text :description
+      t.references :isadmin, foreign_key: true
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
