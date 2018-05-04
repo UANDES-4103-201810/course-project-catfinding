@@ -15,5 +15,5 @@ class Promise < ApplicationRecord
   after_create do
     puts "You have created a promise!"
   end
-  
+
 end
