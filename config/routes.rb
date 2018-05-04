@@ -15,8 +15,6 @@ Rails.application.routes.draw do
 
   get "/users/:id", to: "users#show"
 
-  get "/users", to: "users#index"
-
   get "/users/wishlist/:id", to: "users#wishlist"
 
   post "/users", to: "users#create"
