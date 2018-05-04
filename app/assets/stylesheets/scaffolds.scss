@@ -82,3 +82,9 @@ div {
 label {
   display: block;
 }
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background: #f0c699 !important;
+  color : black !important;
+  border-color: #4d3518 !important;
+  border-width: medium !important;
+}
