@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,45 +10,54 @@
 <body style="background-color:AntiqueWhite;" >
 
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Catfinding</a>
-      <img src="/app/assets/images/gato.jpeg" alt="Mountain View">
-    </div>
+    <img src="/assets/logo.png" height="110px" href = "#" >
     <ul class="nav navbar-nav navbar-right">
-      <input type="text" placeholder="Enter Username" name="uname" required>
-      <input type="password" placeholder="Enter Password" name="upassword" required>
-      <button type="button" class="btn btn-primary">Log In</button>
+      <input style="margin-top: 8%" align="center" type="text" placeholder="Enter Username" name="uname" required>
+      <input style="margin-top: 8%" align="center" type="password" placeholder="Enter Password" name="upassword" required>
+      <button type="button" class="btn btn-primary" style="margin-right: 20px; margin-top: 10px">Log In</button>
       <br>
-      <a href=" ">Forgot your password?</a>
+      <a href=" " style="text-indent: 210em">Forgot your password?</a>
     </ul>
-  </div>
+
 </nav>
 
 
 <div class="container">
-  <h1>Sign up</h1><br>
-  Email <input type="text" name="email"><br><br>
-  First Name <input type="text" name="fname"><br><br>
-  Last Name <input type="text" name="lname"><br><br>
-  Adress <input type="text" name="adress"><br><br>
-  Birthday <input type="date" name="birthday"><br><br>
-  Phone <input type="text" name="phone"><br><br>
-  Gender
-  <form>
-    <label class="radio-inline">
-      <input type="radio" name="gender">Male
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="gender">Female
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="gender">Undefined
-    </label>
-  </form><br>
-  Password <input type="password" name="rpassword"><br><br>
-  Repeat Password <input type="password" name="rpassword"><br><br>
-  <button type="button" class="btn btn-primary">Create Account</button><div align="center"><button type="button" class="btn btn-primary">Don't want to login? <br>Enter as a guest</button></div>
+  <table>
+    <tr>
+      <td>
+  <h1>Sign up</h1>
+        <table class= "table table-sm" style="border-color: transparent">
+          <tr> <td>Email</td><td><input type="text" name="email"></td></tr>
+          <tr> <td> First Name</td><td> <input type="text" name="fname"></td></tr>
+          <tr> <td> Last Name </td><td><input type="text" name="lname"></td></tr>
+          <tr> <td> Adress </td><td><input type="text" name="adress"></td></tr>
+          <tr> <td> Birthday </td><td><input type="date" name="birthday"></td></tr>
+          <tr> <td> Phone </td><td><input type="text" name="phone"></td></tr>
+          <tr> <td> Gender</td>
+                    <form><td>
+                      <label class="radio-inline">
+                        <input type="radio" name="gender">Male
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="gender">Female
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="gender">Undefined
+                      </label></td>
+                    </form>
+          <tr> <td> Password </td><td><input type="password" name="rpassword">
+          <tr> <td> Repeat Password</td><td> <input type="password" name="rpassword">
+        </table>
+  <button type="button" class="btn btn-primary">Create Account</button>
+      </td>
+      <td/>
+      <td>
+    <div align="center" style="text-indent: 10em"><a href="/projects" type="button"  class="btn btn-primary">Don't want to login? <br>Enter as a guest</a>
+    </div>
+      </td>
+    </tr>
+  </table>
 
 </div>
 

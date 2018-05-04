@@ -5,7 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       ## Other attrs created by ourselves for Web Tech
       t.string :name
-      t.date :birthday
+      t.datetime :birthday
       t.string :last_name
       t.string :phone
       t.string :gender

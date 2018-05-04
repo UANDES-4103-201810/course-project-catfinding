@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   validate :date_cannot_be_in_the_past
   def date_cannot_be_in_the_past
-    if birthday < (Date.today-14.years)
+    if (self.birthday) < (Date.today-14.years)
       errors.add(:birthday, "You must be (at least) 14 years old")
     end
   end
