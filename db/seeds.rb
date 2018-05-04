@@ -8,13 +8,10 @@
 date_4 = Date.new(1996, 9, 3)
 date_5 = Date.new(1980, 1, 4)
 date_6 = Date.new(1993, 12, 22)
-user_1 = User.create(name: 'Francisco',  email: 'fjborie@miuandes.cl', address: 'San Carlos de Apoquindo 2200', birthday: date_4)
-user_2 = User.create(name: 'Diego', email: 'dbeckdorf@miuandes.cl', address: 'San Carlos de Apoquindo 2200', birthday: date_5)
-user_3 = User.create(name: 'Maximiliano', email: 'mrgarcia1@miuandes.cl', address: 'San Carlos de Apoquindo 2200', birthday: date_6)
+user_1 = User.create(name: 'Francisco',  email: 'fjborie@miuandes.cl', adress: 'San Carlos de Apoquindo 2200', birthday: date_4)
+user_2 = User.create(name: 'Diego', email: 'dbeckdorf@miuandes.cl', adress: 'San Carlos de Apoquindo 2200', birthday: date_5)
+user_3 = User.create(name: 'Maximiliano', email: 'mrgarcia1@miuandes.cl', adress: 'San Carlos de Apoquindo 2200', birthday: date_6)
 
-up_1= Userpassword.create(password: 'pass123456', user: user_1)
-up_2= Userpassword.create(password: 'pass123456', user: user_2)
-up_3= Userpassword.create(password: 'pass123456', user: user_3)
 
 catt_1 = Category.create(name: 'Categoria 1')
 
@@ -26,6 +23,6 @@ project_1 = Project.create(tittle: 'Proyecto 1', markdown: 'lalallalalalalalaa',
 promise_1 = Promise.create(name: 'Promise 1', amount: 30, description: 'kkjsgehgberkbghbuvfkjhvkjshvjshvgk', etd: date_2, project:project_1)
 promise_2 = Promise.create(name: 'Promise 2', amount: 45, description: 'kkjsgehgberkbghbuvfkjhvkjshvjshvgk', etd: date_2, project:project_1)
 
-userproject_1 = User_project.create(user: user_1, project: project_1)
-userproject_2 = User_project.create(user: user_2, project: project_1)
-userproject_3 = User_project.create(user: user_3, project: project_1)
+#userproject_1 = User_project.create(user: user_1, project: project_1)
+#userproject_2 = User_project.create(user: user_2, project: project_1)
+#userproject_3 = User_project.create(user: user_3, project: project_1)
