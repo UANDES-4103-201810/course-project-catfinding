@@ -1,5 +1,52 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:AntiqueWhite;" >
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          by category...
+          <li><a href="#">Film</a></li>
+          <li><a href="#">Design & Tech</a></li>
+          <li><a href="#">Publishing</a></li>
+          <li><a href="#">Games</a></li>
+          <li><a href="#">Arts</a></li>
+          <li><a href="#">Music</a></li>
+          <li><a href="#">Comic & Illustration</a></li>
+          <li><a href="#">Food & Craft</a></li>
+        </ul>
+      </li>
+      <li><a href="#">My info</a></li>
+      <li><a href="#">Search</a></li>
+    </ul>
+  </div>
+</nav>
+
 <h1>New Project</h1>
-
-<%= render 'form', project: @project %>
-
-<%= link_to 'Back', projects_path %>
+<table class= "table table-sm" style="border-color: transparent">
+  <tr> <td>Title</td><td><input type="text" name="title"></td></tr>
+  <tr> <td> Deadline</td><td> <input type="date" name="deadline"></td></tr>
+  <tr> <td> Goal Amount </td><td><input type="text" name="lname"></td></tr>
+  <tr> <td> Markdown </td><td><textarea class="form-control" rows="5" id="comment"></textarea></td></tr>
+  <tr> <td> Description </td><td><textarea class="form-control" rows="5" id="comment"></textarea></td></tr>
+  <tr> <td> ETD </td><td><input type="date" name="etd"></td></tr>
+  <tr><td>
+  <form action="/projects">
+    <input class="btn btn-primary" type="submit" value="Create Project">
+  </form>
+  </tr></td>
+</table>
