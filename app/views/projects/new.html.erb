@@ -12,7 +12,7 @@
 <nav class="navbar navbar-inverse" style="height: 60px">
   <div class="container-fluid" >
     <div class="navbar-header">
-      <img src="/assets/gato.png" height="60px" href = "/" >
+      <img src="/assets/gato.png" height="59px" href = "/" >
     </div>
     <ul class="nav navbar-nav navbar-home navbar-light" >
       <li class="active"><a href="/projects">Home</a></li>
@@ -30,23 +30,30 @@
         </ul>
       </li>
       <li><a href="#">My info</a></li>
-      <li><a href="/projects">Search</a></li>
     </ul>
   </div>
 </nav>
 
 <h1>New Project</h1>
 <table class= "table table-sm" style="border-color: transparent">
-  <tr> <td>Title</td><td><input type="text" name="title"></td></tr>
-  <tr> <td> Deadline</td><td> <input type="date" name="deadline"></td></tr>
-  <tr> <td> Goal Amount </td><td><input type="text" name="lname"></td></tr>
-  <tr> <td> Markdown </td><td><textarea class="form-control" rows="5" id="comment"></textarea></td></tr>
-  <tr> <td> Description </td><td><textarea class="form-control" rows="5" id="comment"></textarea></td></tr>
-  <tr> <td> ETD </td><td><input type="date" name="etd"></td></tr>
+  <tr> <td width="20%">Title</td><td><input type="text" name="title"></td></tr>
+  <tr> <td width="20%"> Deadline</td><td> <input type="date" name="deadline"></td></tr>
+  <tr> <td width="20%"> Goal Amount </td><td><input type="text" name="lname"></td></tr>
+  <tr> <td width="20%"> Markdown </td><td><textarea class="form-control" rows="5" id="comment" ></textarea></td></tr>
+  <tr> <td width="20%"> Description </td><td><textarea class="form-control" rows="5" id="comment"></textarea></td></tr>
+  <tr> <td width="20%"> ETD </td><td><input type="date" name="etd"></td></tr>
 </table>
-<form action="/projects">
-  <input class="btn btn-primary" type="submit" value="Create Project">
-</form>
-<form action="/projects">
-  <input class="btn btn-primary" type="submit" value="Back">
-</form>
+<table class="btn-table">
+  <tr>
+    <td>
+      <form action="/projects">
+        <input class="btn btn-primary" type="submit" value="Create Project">
+      </form>
+    </td>
+    <td>
+      <form action="/projects">
+        <input class="btn btn-primary" type="submit" value="Back">
+      </form>
+    </td>
+  </tr>
+</table>
