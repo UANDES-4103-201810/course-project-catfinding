@@ -107,8 +107,8 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="73" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="100" />
     <option name="y" value="27" />
     <option name="width" value="1151" />
     <option name="height" value="608" />
