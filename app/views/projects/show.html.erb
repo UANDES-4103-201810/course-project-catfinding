@@ -1,49 +1,66 @@
-<p id="notice"><%= notice %></p>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:AntiqueWhite;" >
 
-<p>
-  <strong>Tittle:</strong>
-  <%= @project.tittle %>
-</p>
+<nav class="navbar navbar-inverse" style="height: 60px">
+  <div class="container-fluid" >
+    <div class="navbar-header">
+      <img src="/assets/gato.png" height="60px" href = "/" >
+    </div>
+    <ul class="nav navbar-nav navbar-home navbar-light" >
+      <li class="active"><a href="/projects">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/projects">Film</a></li>
+          <li><a href="/projects">Design & Tech</a></li>
+          <li><a href="/projects">Publishing</a></li>
+          <li><a href="/projects">Games</a></li>
+          <li><a href="/projects">Arts</a></li>
+          <li><a href="/projects">Music</a></li>
+          <li><a href="/projects">Comic & Illustration</a></li>
+          <li><a href="/projects">Food & Craft</a></li>
+        </ul>
+      </li>
+      <li><a href="#">My info</a></li>
+      <li><a href="/projects">Search</a></li>
+    </ul>
+  </div>
+</nav>
 
-<p>
-  <strong>Markdown:</strong>
-  <%= @project.markdown %>
-</p>
+<table class="table">
+  <tr><td>Tittle</td> <td><%= @project.tittle %></td></tr>
+  <tr><td>Markdown</td> <td><%= @project.markdown %></td></tr>
+  <tr><td>Description</td> <td><%= @project.description %></td></tr>
+  <tr><td>Goal amount</td> <td><%= @project.goalamount %></td></tr>
+  <tr><td>Current amount</td> <td><%= @project.currentamount %></td></tr>
+  <tr><td>Approved</td> <td><%= @project.approved %></td></tr>
+  <tr><td>Pending approval</td> <td><%= @project.pendingapproval %></td></tr>
+  <tr><td>Deadline</td> <td><%= @project.deadline %></td></tr>
+  <tr><td>Category</td> <td><%= @project.category %></td></tr>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
 
-<p>
-  <strong>Goalamount:</strong>
-  <%= @project.goalamount %>
-</p>
 
-<p>
-  <strong>Currentamount:</strong>
-  <%= @project.currentamount %>
-</p>
+</table>
+<table>
+  <tr>
+    <td>
+<form action="/projects">
+  <input class="btn btn-primary" type="submit" value="Add to wishlist">
+</form>
+    </td>
+    <td>
+      <form action="/projects">
+        <input class="btn btn-primary" type="submit" value="Back">
+      </form>
+    </td>
+  </tr>
+</table>
 
-<p>
-  <strong>Approved:</strong>
-  <%= @project.approved %>
-</p>
-
-<p>
-  <strong>Pendingapproval:</strong>
-  <%= @project.pendingapproval %>
-</p>
-
-<p>
-  <strong>Deadline:</strong>
-  <%= @project.deadline %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @project.category %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
