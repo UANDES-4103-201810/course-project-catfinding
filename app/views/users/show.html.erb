@@ -9,37 +9,43 @@
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+<nav class="navbar navbar-inverse" style="height: 60px">
+  <div class="container-fluid" >
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <img src="/assets/gato.png" height="60px" href = "/" >
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+    <ul class="nav navbar-nav navbar-home navbar-light" >
+      <li class="active"><a href="/projects">Home</a></li>
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Film</a></li>
-          <li><a href="#">Design & Tech</a></li>
-          <li><a href="#">Publishing</a></li>
-          <li><a href="#">Games</a></li>
-          <li><a href="#">Arts</a></li>
-          <li><a href="#">Music</a></li>
-          <li><a href="#">Comic & Illustration</a></li>
-          <li><a href="#">Food & Craft</a></li>
+          <li><a href="/projects">Film</a></li>
+          <li><a href="/projects">Design & Tech</a></li>
+          <li><a href="/projects">Publishing</a></li>
+          <li><a href="/projects">Games</a></li>
+          <li><a href="/projects">Arts</a></li>
+          <li><a href="/projects">Music</a></li>
+          <li><a href="/projects">Comic & Illustration</a></li>
+          <li><a href="/projects">Food & Craft</a></li>
         </ul>
       </li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
+      <li><a href="#">My info</a></li>
+      <li><a href="/projects">Search</a></li>
     </ul>
   </div>
 </nav>
 
-<div class="container">
-  <h3>Navbar With Dropdown</h3>
-  <p>This example adds a dropdown menu for the "Page 1" button in the navigation bar.</p>
-</div>
+<table class="table">
+  <tr><td>Name</td> <td><%= @user.name %></td></tr>
+  <tr><td>Address</td> <td><%= @user.address %></td></tr>
+  <tr><td>Email</td> <td><%= @user.email %></td></tr>
+  <tr><td>Birthday</td> <td><%= @user.birthday %></td></tr>
+  <tr><td>Description</td> <td><%= @user.description %></td></tr>
+  <tr><td>Last login</td> <td><%= @user.laslogin %></td></tr>
+  <tr><td>Pending approval</td> <td><%= @user.pendingapproval %></td></tr>
+  <tr><td>Is admin?</td> <td><%= @user.isadmin %></td></tr>
 
+</table>
 </body>
 </html>
 
