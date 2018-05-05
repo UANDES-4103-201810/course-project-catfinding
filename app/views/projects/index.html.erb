@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<html lang="en">
+<html>
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
@@ -11,12 +9,13 @@
 </head>
 <body style="background-color:AntiqueWhite;" >
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+<!-- este es el navbar completo final-->
+<nav class="navbar navbar-inverse" style="height: 60px">
+  <div class="container-fluid" >
     <div class="navbar-header">
-      <img src="/assets/gato.png" height="110px" href = "#" >
+      <img src="/assets/gato.png" height="60px" href = "/" >
     </div>
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav navbar-home navbar-light" >
       <li class="active"><a href="#">Home</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects<span class="caret"></span></a>
@@ -36,6 +35,7 @@
     </ul>
   </div>
 </nav>
+
 
 <table class="table" align="center">
 <tr>
@@ -62,11 +62,21 @@
 </tr>
 
 </table>
-</body>
-</html>
 
-<h1>Projects</h1>
+<!-- esta tabla tiene un boton a la derecha, si quieres agregarle botones, le agregas
+un td con width 10% y le restas 10% al width del primer td-->
+<table width="100%">
+  <tr>
+    <td width=" 90%">
+      <h1>Projects</h1>
+    </td>
+    <td width="10%">
+      <button type="button" class="btn btn-primary" style="align-self: left">New Project</button>
+    </td>
+  </tr>
+</table>
 
+<!-- esta es la tabla con proyectos -->
 <table class="table table-striped">
   <thead>
     <tr>
@@ -93,8 +103,5 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
-<li><a href="/">Home</a></li>
+</body>
+</html>
