@@ -1,4 +1,28 @@
-<h2>Change your password</h2>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color:AntiqueWhite;" >
+
+<nav class="navbar navbar-inverse " style="font-size: medium">
+  <a href="/">
+    <img src="/assets/logo.png" height="110px">
+  </a>
+  <ul class="nav navbar-nav navbar-right">
+    <form action="/users/sign_in">
+      <input class="btn btn-primary" type="submit" value="Log in">
+    </form>
+    <br>
+    <a href=" " style="text-indent: 210em">Forgot your password?</a>
+  </ul>
+
+</nav>
+<center>
+  <h2>Change your password</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -23,3 +47,6 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</center>
+</body>
+</html>
