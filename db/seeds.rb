@@ -23,6 +23,6 @@ project_1 = Project.create(tittle: 'Proyecto 1', markdown: 'lalallalalalalalaa',
 promise_1 = Promise.create(name: 'Promise 1', amount: 30, description: 'kkjsgehgberkbghbuvfkjhvkjshvjshvgk', etd: date_2, project:project_1)
 promise_2 = Promise.create(name: 'Promise 2', amount: 45, description: 'kkjsgehgberkbghbuvfkjhvkjshvjshvgk', etd: date_2, project:project_1)
 
-#userproject_1 = User_project.create(user: user_1, project: project_1)
-#userproject_2 = User_project.create(user: user_2, project: project_1)
-#userproject_3 = User_project.create(user: user_3, project: project_1)
+#userproject_1 = UserProject.create(user: user_1, project: project_1)
+#userproject_2 = UserProject.create(user: user_2, project: project_1)
+#userproject_3 = UserProject.create(user: user_3, project: project_1)
