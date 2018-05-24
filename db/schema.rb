@@ -13,20 +13,20 @@
 ActiveRecord::Schema.define(version: 2018_05_03_173323) do
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
+    t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "tittle"
-    t.text "markdown"
-    t.text "description"
-    t.integer "goalamount"
-    t.integer "currentamount"
-    t.boolean "approved"
-    t.boolean "pendingapproval"
-    t.date "deadline"
+    t.string "tittle", default: "", null: false
+    t.text "markdown", default: "", null: false
+    t.text "description", default: "", null: false
+    t.integer "goalamount", null: false
+    t.integer "currentamount", null: false
+    t.boolean "approved", null: false
+    t.boolean "pendingapproval", null: false
+    t.date "deadline", null: false
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(version: 2018_05_03_173323) do
   end
 
   create_table "promises", force: :cascade do |t|
-    t.string "name"
-    t.integer "amount"
-    t.text "description"
-    t.date "etd"
+    t.string "name", default: "", null: false
+    t.integer "amount", null: false
+    t.text "description", default: "", null: false
+    t.date "etd", null: false
     t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -65,19 +65,19 @@ ActiveRecord::Schema.define(version: 2018_05_03_173323) do
   end
 
   create_table "user_roles", force: :cascade do |t|
-    t.boolean "isadmin"
+    t.boolean "isadmin", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.datetime "birthday"
-    t.string "last_name"
-    t.string "phone"
-    t.string "gender"
-    t.string "adress"
-    t.text "description"
+    t.string "name", default: "", null: false
+    t.datetime "birthday", null: false
+    t.string "last_name", default: "", null: false
+    t.string "phone", default: "", null: false
+    t.string "gender", default: "", null: false
+    t.string "adress", default: "", null: false
+    t.text "description", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

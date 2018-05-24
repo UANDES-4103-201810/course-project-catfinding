@@ -12,17 +12,14 @@
 
 
 <table class="table">
-  <tr><td>Name</td> <td><%= @user.name %></td></tr>
-  <!--
- aqui iwal
-  <tr><td>Address</td> <td><%= @user.address %></td></tr>
-  <tr><td>Email</td> <td><%= @user.email %></td></tr>
-  <tr><td>Birthday</td> <td><%= @user.birthday %></td></tr>
-  <tr><td>Description</td> <td><%= @user.description %></td></tr>
-  <tr><td>Last login</td> <td><%= @user.laslogin %></td></tr>
-  <tr><td>Pending approval</td> <td><%= @user.pendingapproval %></td></tr>
-  <tr><td>Is admin?</td> <td><%= @user.isadmin %></td></tr>
--->
+  <tr><td>Name</td> <td><%= current_user[:name ]%></td></tr>
+  <tr><td>Address</td> <td><%= current_user[:address ]%></td></tr>
+  <tr><td>Email</td> <td><%= current_user[:email ]%></td></tr>
+  <tr><td>Birthday</td> <td><%= current_user[:birthday ]%></td></tr>
+  <tr><td>Description</td> <td><%= current_user[:description ]%></td></tr>
+  <tr><td>Last login</td> <td><%= current_user[:laslogin ]%></td></tr>
+  <tr><td>Pending approval</td> <td><%= current_user[:pendingapproval ]%></td></tr>
+  <tr><td>Is admin?</td> <td><%= current_user[:isadmin ]%></td></tr>
 
 </table>
 </body>
@@ -31,5 +28,5 @@
 
 
 
-<%= link_to 'Edit', edit_user_path(@user), {:class => "btn btn-primary"} %> |
+<%= link_to 'Edit', edit_user_path(@user), {:class => "btn btn-primary"} %>
 <%= link_to 'Back', users_path , {:class => "btn btn-primary"}%>

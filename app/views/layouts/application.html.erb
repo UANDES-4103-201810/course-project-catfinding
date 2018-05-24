@@ -32,19 +32,26 @@
             <li><a href="/projects">Comic & Illustration</a></li>
             <li><a href="/projects">Food & Craft</a></li>
           </ul>
+          <% if user_signed_in? %>
+            <li><%= link_to "My info", '/users/%s' % [current_user[:id]] , method: :get %>  </li>
+          <% end %>
+        <% if user_signed_in? %>
+          <li><%= link_to "My info", '/users/%s' % [current_user[:id]], method: :get %>  </li>
+        <% end %>
         </li>
       </ul>
       <ul class = "nav navbar-nav navbar-home navbar-light right-header" >
         <li>
-        <i class="material-icons" style="color: #4d3518; font-size: 48px">pets</i>
+          <i class="material-icons" style="color: #4d3518; font-size: 48px">pets</i>
         </li>
         <li>
-          <div style="font-size: 14px">Hey</div>
           <div class="div-child" style="font-size: 14px">
           <% if user_signed_in? %>
+            <div style="font-size: 14px">Hey</div>
             <div><%=current_user.name%> \(^-^)/</div>
             <%= link_to "Log out", destroy_user_session_path, method: :delete %>
           <% else %>
+            <div style="font-size: 14px">Hey</div>
             <div>Beautiful</div>
             <%= link_to "Wanna Log In?", new_user_session_path %>
           <% end %>

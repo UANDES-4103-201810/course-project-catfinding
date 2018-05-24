@@ -4,13 +4,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
       ## Other attrs created by ourselves for Web Tech
-      t.string :name
-      t.datetime :birthday
-      t.string :last_name
-      t.string :phone
-      t.string :gender
-      t.string :adress
-      t.text :description
+      t.string :name, null: false, default: ""
+      t.datetime :birthday, null: false, default: ""
+      t.string :last_name, null: false, default: ""
+      t.string :phone, null: false, default: ""
+      t.string :gender, null: false, default: ""
+      t.string :adress, null: false, default: ""
+      t.text :description, null: false, default: ""
       #t.references :isadmin, foreign_key: true
       ## Database authenticatable
       t.string :email,              null: false, default: ""

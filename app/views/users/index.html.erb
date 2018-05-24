@@ -20,13 +20,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
-<<<<<<< HEAD
         <td><%= user.adress %></td>
-=======
-<!--
-aqui hay errores no se pq
-        <td><%= user.address %></td>
->>>>>>> 3ab5b713ab9c81f72d26979a2002c84627a5cd7f
         <td><%= user.email %></td>
         <td><%= user.birthday %></td>
         <td><%= user.description %></td>
@@ -34,7 +28,6 @@ aqui hay errores no se pq
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Wishlist',"/users/wishlist/%s"%[user.id] %></td>
--->
       </tr>
     <% end %>
   </tbody>
