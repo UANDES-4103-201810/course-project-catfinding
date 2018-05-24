@@ -8,19 +8,7 @@
 </head>
 <body style="background-color:AntiqueWhite;" >
 
-<nav class="navbar navbar-inverse " style="font-size: medium">
-  <a href = "/" >
-    <img src="/assets/logo.png" height="110px">
-  </a>
-  <ul class="nav navbar-nav navbar-right">
-    <form action="/users/sign_in">
-      <input class="btn btn-primary" type="submit" value="Log in">
-    </form>
-    <br>
-    <a href=" " style="text-indent: 210em">Forgot your password?</a>
-  </ul>
 
-</nav>
 <center>
   <p id="notice"><%= notice %></p>
 
@@ -49,8 +37,8 @@
   <%= @promise.project %>
 </p>
 
-<%= link_to 'Edit', edit_promise_path(@promise) %> |
-<%= link_to 'Back', promises_path %>
+<%= link_to 'Edit', edit_promise_path(@promise), {:class => "btn btn-primary"} %> |
+<%= link_to 'Back', promises_path, {:class => "btn btn-primary"} %>
 </center>
 </body>
 </html>

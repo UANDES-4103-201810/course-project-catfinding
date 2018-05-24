@@ -8,25 +8,13 @@
 </head>
 <body style="background-color:AntiqueWhite;" >
 
-<nav class="navbar navbar-inverse " style="font-size: medium">
-  <a href="/">
-    <img src="/assets/logo.png" height="110px">
-  </a>
-  <ul class="nav navbar-nav navbar-right">
-    <form action="/users/sign_in">
-      <input class="btn btn-primary" type="submit" value="Log in">
-    </form>
-    <br>
-    <a href=" " style="text-indent: 210em">Forgot your password?</a>
-  </ul>
 
-</nav>
 <center>
   <p>Welcome <%= @email %>!</p>
 
 <p>You can confirm your account email through the link below:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token), {:class => "btn btn-primary"} %></p>
 
 </center>
 </body>

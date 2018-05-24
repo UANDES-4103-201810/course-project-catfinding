@@ -93,10 +93,12 @@ label {
   alignment: inherit !important;
 }
 
-.navbar-inverse {
+.navbar-inverse, .navbar-nav, .nav>li>a{
   background: #e4a86c !important;
   border-color: #e4a86c !important;
+  color: white !important;
 }
+
 
 .navbar-home {
   font-size: large !important;
@@ -106,6 +108,7 @@ label {
   color: white !important;
   margin-top: 5px !important;
   text-decoration-color: white !important;
+
 }
 
 
@@ -117,4 +120,15 @@ td {
 
 .btn-table {
   width: 200px !important;
+}
+
+.right-header {
+  float: right !important;
+  text-wrap: normal;
+  wrap-option: wrap;
+}
+
+.div-child {
+  height: 100% !important;
+  display: inline-block !important;
 }

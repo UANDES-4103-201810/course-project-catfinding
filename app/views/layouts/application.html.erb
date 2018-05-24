@@ -9,10 +9,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
 
-  <body>
+  <body style="background-color:AntiqueWhite;">
   <nav class="navbar navbar-inverse" style="height: 60px">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -33,7 +33,23 @@
             <li><a href="/projects">Food & Craft</a></li>
           </ul>
         </li>
-        <li><a href="#">My info</a></li>
+      </ul>
+      <ul class = "nav navbar-nav navbar-home navbar-light right-header" >
+        <li>
+        <i class="material-icons" style="color: #4d3518; font-size: 48px">pets</i>
+        </li>
+        <li>
+          <div style="font-size: 14px">Hi!</div>
+          <div class="div-child" style="font-size: 14px">
+          <% if user_signed_in? %>
+            <div><%=current_user.name%> \(^-^)/</div>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <div>Beautiful Guest User</div>
+            <%= link_to "Wanna Log In?", new_user_session_path %>
+          <% end %>
+          </div>
+        </li>
       </ul>
     </div>
   </nav>
