@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :wishlists
   resources :user_roles
   devise_for :users
-  get 'welcome/index'
   resources :users
   resources :projects
   resources :categories
@@ -11,7 +10,7 @@ Rails.application.routes.draw do
   resources :userpasswords
   resources :welcome
 
-  get "/", to: "welcome#index"
+  get "/", to: "projects#index"
 
   get "/users/:id", to: "users#show"
 
