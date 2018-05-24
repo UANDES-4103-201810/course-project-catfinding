@@ -8,9 +8,7 @@ class User < ApplicationRecord
   has_one :user_role
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  validates :name, length: {minimum: 3}
-  validates :last_name, length: {minimum: 3}
-  validates :phone, length: {minimum: 9}
+
 
   #validate :date_cannot_be_in_the_past
   def date_cannot_be_in_the_past
