@@ -11,21 +11,25 @@
 
 
 
-<table class="table">
-  <tr><td>Tittle</td> <td><%= @project.tittle %></td></tr>
-  <tr><td>Markdown</td> <td><%= @project.markdown %></td></tr>
-  <tr><td>Description</td> <td><%= @project.description %></td></tr>
+<table class="table table-stripped ">
   <tr><td>Goal amount</td> <td><%= @project.goalamount %></td></tr>
   <tr><td>Current amount</td> <td><%= @project.currentamount %></td></tr>
   <tr><td>Approved</td> <td><%= @project.approved %></td></tr>
   <tr><td>Pending approval</td> <td><%= @project.pendingapproval %></td></tr>
   <tr><td>Deadline</td> <td><%= @project.deadline %></td></tr>
   <tr><td>Category</td> <td><%= @project.category.name %></td></tr>
-
-
-
 </table>
-<table class="btn-table">
+<div>
+  <div>
+    <h1><%= @project.tittle %></h1>
+    <h3><%= @project.markdown %></h3>
+    <p><%= @project.description %></p>
+  </div>
+  <div>
+
+  </div>
+</div>
+<table class="btn-table table-lg">
   <tr>
     <td>
       <form action="/projects">

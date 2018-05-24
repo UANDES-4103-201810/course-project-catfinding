@@ -39,13 +39,13 @@
         <i class="material-icons" style="color: #4d3518; font-size: 48px">pets</i>
         </li>
         <li>
-          <div style="font-size: 14px">Hi!</div>
+          <div style="font-size: 14px">Hey</div>
           <div class="div-child" style="font-size: 14px">
           <% if user_signed_in? %>
             <div><%=current_user.name%> \(^-^)/</div>
             <%= link_to "Log out", destroy_user_session_path, method: :delete %>
           <% else %>
-            <div>Beautiful Guest User</div>
+            <div>Beautiful</div>
             <%= link_to "Wanna Log In?", new_user_session_path %>
           <% end %>
           </div>
