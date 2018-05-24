@@ -14,7 +14,7 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.name %></td>
-        <td><%= link_to 'Show', category %></td>
+        <td><%= link_to 'Show', category, {:class => "btn btn-primary"} %></td>
       </tr>
     <% end %>
   </tbody>
