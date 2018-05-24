@@ -1,4 +1,5 @@
 class Wishlist < ApplicationRecord
-  has_many :projects
+  has_many :wishlisttoprojects
+  has_many :projects, through: :wishlisttoprojects
   belongs_to :user
 end

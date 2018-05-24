@@ -1,6 +1,14 @@
 class Project < ApplicationRecord
   belongs_to :category
   has_many :promises
+  has_one :user_project
+  has_one :user, through: :user_project
+  has_many :user_fund_projects
+  has_many :users, through: :user_fund_projects
+  has_many :wishlisttoprojects
+  has_many :wishlists, through: :wishlisttoprojects
+
+
   validates :currentamount, numericality: {greater_than_or_equal_to: 0}
   validates :goalamount, numericality: {greater_than: 0}
   validates :tittle, length: {minimum: 3}
