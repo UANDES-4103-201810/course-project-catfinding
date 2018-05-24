@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-  resources :wishlisttoprojects
-  resources :wishlists
-  resources :user_roles
-  devise_for :users
   resources :users
-  resources :projects
-  resources :categories
-  resources :promises
   resources :userpasswords
   resources :welcome
 
