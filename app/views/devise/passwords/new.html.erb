@@ -8,19 +8,7 @@
 </head>
 <body style="background-color:AntiqueWhite;" >
 
-<nav class="navbar navbar-inverse " style="font-size: medium">
-  <a href="/">
-    <img src="/assets/logo.png" height="110px">
-  </a>
-  <ul class="nav navbar-nav navbar-right">
-    <form action="/users/sign_in">
-      <input class="btn btn-primary" type="submit" value="Log in">
-    </form>
-    <br>
-    <a href=" " style="text-indent: 210em">Forgot your password?</a>
-  </ul>
 
-</nav>
 <center>
   <h2>Forgot your password?</h2>
 
@@ -33,7 +21,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "Send me reset password instructions", class:"btn-primary"  %>
   </div>
 <% end %>
 
