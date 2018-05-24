@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 date_4 = Date.new(1996, 9, 3)
 date_5 = Date.new(1980, 1, 4)
 date_6 = Date.new(1993, 12, 22)
@@ -22,3 +23,5 @@ promise_1 = Promise.create(name: 'Promise 1', amount: 30, description: 'kkjsgehg
 promise_2 = Promise.create(name: 'Promise 2', amount: 45, description: 'kkjsgehgberkbghbuvfkjhvkjshvjshvgk', etd: date_2, project:project_1)
 
 userproject_1 = UserProject.create(user: user_1, project: project_1)
+
+admin_1= UserRole.create(user: user_1, isadmin: true)

@@ -66,8 +66,10 @@ ActiveRecord::Schema.define(version: 2018_05_03_173323) do
 
   create_table "user_roles", force: :cascade do |t|
     t.boolean "isadmin", default: false, null: false
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_roles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
