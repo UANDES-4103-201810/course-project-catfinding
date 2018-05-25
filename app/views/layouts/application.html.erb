@@ -25,14 +25,11 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="/projects">Film</a></li>
-            <li><a href="/projects">Design & Tech</a></li>
-            <li><a href="/projects">Publishing</a></li>
-            <li><a href="/projects">Games</a></li>
-            <li><a href="/projects">Arts</a></li>
-            <li><a href="/projects">Music</a></li>
-            <li><a href="/projects">Comic & Illustration</a></li>
-            <li><a href="/projects">Food & Craft</a></li>
+            <li><a href="/projects">All</a></li>
+            <% @categories=Category.all %>
+            <%= @categories.each do |category|   %>
+              <li><%= link_to category.name, "/projects/category/%s" % [category.id] %></li>
+            <% end %>
           </ul>
           <% if user_signed_in? %>
         <li class="dropdown">

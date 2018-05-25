@@ -11,6 +11,6 @@ class Project < ApplicationRecord
 
   validates :currentamount, numericality: { greater_than_or_equal_to: 0 }
   validates :goalamount, numericality: { greater_than: 0 }
-  validates :tittle, length: { minimum: 3 }
+  validates :title, length: { minimum: 3 }
   validates :markdown, length: { minimum: 3 }
 end

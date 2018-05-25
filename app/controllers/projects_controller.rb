@@ -6,10 +6,18 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
   end
+
   def projectsbyuser
     @user = User.find(params[:id])
-    @projects = Project.where(user: @user)
+    @user_projects = UserProject.where(user: @user)
   end
+
+  # GET /projects/category/1
+  # GET /projects/category/1.json
+  def index_by_cat
+    @projects_by_c = Project.where(category_id: params[:category_id])
+  end
+
   # GET /projects/1
   # GET /projects/1.json
   def show

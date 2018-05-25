@@ -1,0 +1,35 @@
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Title</th>
+      <th>Markdown</th>
+      <th>Description</th>
+      <th>Goalamount</th>
+      <th>Currentamount</th>
+      <th>Approved</th>
+      <th>Deadline</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_projects.each do |userproject| %>
+      <tr>
+        <td><%= userproject.project.title %></td>
+        <td><%= userproject.project.markdown %></td>
+        <td><%= userproject.project.description %></td>
+        <td><%= userproject.project.goalamount %></td>
+        <td><%= userproject.project.currentamount %></td>
+        <td><%= userproject.project.approved %></td>
+        <td><%= userproject.project.deadline %></td>
+        <td><%= userproject.project.category.name %></td>
+        <td><%= link_to 'Show', userproject.project %></td>
+        <td><%= link_to 'Edit', edit_project_path(userproject.project) %></td>
+        <td><%= link_to 'Destroy', userproject.project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
