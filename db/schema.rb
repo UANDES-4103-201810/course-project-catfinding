@@ -13,19 +13,19 @@
 ActiveRecord::Schema.define(version: 2018_05_25_005238) do
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
+    t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "title"
-    t.text "markdown"
-    t.text "description"
-    t.integer "goalamount"
-    t.integer "currentamount"
-    t.boolean "approved"
-    t.date "deadline"
+    t.string "title", default: "", null: false
+    t.text "markdown", default: "", null: false
+    t.text "description", default: "", null: false
+    t.integer "goalamount", default: 0, null: false
+    t.integer "currentamount", default: 0, null: false
+    t.boolean "approved", default: false, null: false
+    t.date "deadline", default: "2050-05-05", null: false
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 2018_05_25_005238) do
   end
 
   create_table "promises", force: :cascade do |t|
-    t.string "name"
-    t.integer "amount"
-    t.text "description"
-    t.date "etd"
+    t.string "name", default: "", null: false
+    t.integer "amount", default: 0, null: false
+    t.text "description", default: "", null: false
+    t.date "etd", default: "2050-05-05", null: false
     t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2018_05_25_005238) do
   end
 
   create_table "user_roles", force: :cascade do |t|
-    t.boolean "is_admin"
+    t.boolean "is_admin", default: false, null: false
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -82,12 +82,12 @@ ActiveRecord::Schema.define(version: 2018_05_25_005238) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "last_name"
-    t.string "phone"
-    t.string "gender"
-    t.text "description"
-    t.date "birthday"
+    t.string "name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "phone", default: "", null: false
+    t.string "gender", default: "", null: false
+    t.text "description", default: "", null: false
+    t.date "birthday", default: "1994-03-16", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

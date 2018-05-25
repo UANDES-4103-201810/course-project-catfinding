@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :userpasswords
   resources :welcome
 
+  get "/users/:id/projects/", to: "projects#projectsbyuser"
+
   get "/", to: "projects#index"
 
   get "/users/:id", to: "users#show"
