@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 
   get "/projects/:id", to: "projects#show"
 
+  get "/projects/category/:category_id", to: "projects#index_by_cat"
+
   post "/projects", to: "projects#create"
 
   delete "/projects/:id", to: "projects#destroy"
