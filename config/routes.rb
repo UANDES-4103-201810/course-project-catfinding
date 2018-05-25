@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :user_fund_projects
   resources :wishlist_projects
   resources :wishlists
-  resources :user_roles
   resources :user_projects
   resources :promises
   resources :projects
@@ -13,6 +12,8 @@ Rails.application.routes.draw do
   resources :welcome
 
   get "/users/:id/projects/", to: "projects#projectsbyuser"
+
+  get "/categories", to: "categories#index"
 
   get "/", to: "projects#index"
 

@@ -48,7 +48,7 @@
               <ul class="dropdown-menu">
                 <li><%= link_to "Users", '/users/', method: :get %> </li>
                 <li><%= link_to "Projects", '/projects' % [current_user[:id]], method: :get %> </li>
-                <li><%= link_to "Categories", '/users/%s' % [current_user[:id]], method: :get %> </li>
+                <li><%= link_to "Categories", '/categories' % [current_user[:id]], method: :get %> </li>
               </ul>
             </li>
           <% end %>
