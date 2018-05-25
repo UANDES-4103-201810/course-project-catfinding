@@ -1,16 +1,5 @@
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body style="background-color:AntiqueWhite;" >
-
-
-<center>
 <h2>Log in</h2>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -30,13 +19,8 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in", class:"btn btn-primary" %>
+    <%= f.submit "Log in" %>
   </div>
 <% end %>
 
-  <form action="http://localhost:3000/users/sign_up">
-    <input class="btn btn-primary" type="submit" value="Register now! <3">
-  </form>
-
-</center>
-</body>
+<%= render "devise/shared/links" %>
