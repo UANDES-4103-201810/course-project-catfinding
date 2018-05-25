@@ -1,13 +1,13 @@
 class CreateProjects < ActiveRecord::Migration[5.2]
   def change
     create_table :projects do |t|
-      t.string :title
-      t.text :markdown
-      t.text :description
-      t.integer :goalamount
-      t.integer :currentamount
-      t.boolean :approved
-      t.date :deadline
+      t.string :title, null: false, default: ""
+      t.text :markdown, null: false, default: ""
+      t.text :description, null: false, default: ""
+      t.integer :goalamount, null: false, default: 0
+      t.integer :currentamount, null: false, default: 0
+      t.boolean :approved, null: false, default: false
+      t.date :deadline, null: false, default: (20500505)
       t.references :category, foreign_key: true
 
       t.timestamps
