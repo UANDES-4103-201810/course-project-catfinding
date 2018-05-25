@@ -28,7 +28,7 @@ class UserProjectsController < ApplicationController
 
     respond_to do |format|
       if @user_project.save
-        format.html { redirect_to @user_project, notice: 'User project was successfully created.' }
+        format.html { redirect_to "projects/%s" % [@user_project.project_id], notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @user_project }
       else
         format.html { render :new }

@@ -39,5 +39,12 @@ promise_1 = Promise.create(name: 'Promise 1', amount: 30, description: 'kkjsgehg
 promise_2 = Promise.create(name: 'Promise 2', amount: 45, description: 'kkjsgehgberkbghbuvfkjhvkjshvjshvgk', etd: date_2, project:project_1)
 
 userproject_1 = UserProject.create(user: user_1, project: project_1)
+userproject_2 = UserProject.create(user: user_1, project: project_2)
+userproject_3 = UserProject.create(user: user_1, project: project_3)
+userproject_4 = UserProject.create(user: user_1, project: project_4)
+userproject_5 = UserProject.create(user: user_1, project: project_5)
+userproject_6 = UserProject.create(user: user_1, project: project_6)
+userproject_7 = UserProject.create(user: user_1, project: project_7)
+userproject_8 = UserProject.create(user: user_1, project: project_8)
 
 admin_1= UserRole.create(user: user_1, is_admin: true)

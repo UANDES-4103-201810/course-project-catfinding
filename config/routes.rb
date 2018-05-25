@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get "/users/:id", to: "users#show"
 
+  get "/users", to: "users#index"
+
   get "/users/wishlist/:id", to: "users#wishlist"
 
   post "/users", to: "users#create"
@@ -53,6 +55,8 @@ Rails.application.routes.draw do
   delete "/userpasswords/:id", to: "userpasswords#destroy"
 
   patch "/userpasswords/:id", to: "userpasswords#update"
+
+  post "/users/:user_id/projects/:project_id", to: "user_projects#create"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
