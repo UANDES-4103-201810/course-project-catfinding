@@ -35,12 +35,17 @@
             <li><a href="/projects">Food & Craft</a></li>
           </ul>
           <% if user_signed_in? %>
-            <li><%= link_to "My info", '/users/%s' % [current_user[:id]] , method: :get %>  </li>
-          <% end %>
-        <% if user_signed_in? %>
-          <li><%= link_to "My info", '/users/%s' % [current_user[:id]], method: :get %>  </li>
-        <% end %>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Info<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "My info", '/users/%s' % [current_user[:id]] , method: :get %> </li>
+            <li><a href="/projects">My Projects</a></li>
+          </ul>
         </li>
+          <% else %>
+          <li class=""><a href="/users/sign_in">My Info</a></li>
+        <% end %>
+
       </ul>
       <ul class = "nav navbar-nav navbar-home navbar-light right-header" >
         <li>
