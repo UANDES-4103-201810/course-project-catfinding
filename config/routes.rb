@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :userpasswords
   resources :welcome
 
+  get "projects/:id/promises", to: "promises#by_project"
+
   get "/users/:id/projects/", to: "projects#projectsbyuser"
 
   get "/categories", to: "categories#index"

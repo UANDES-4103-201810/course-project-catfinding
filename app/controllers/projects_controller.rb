@@ -21,6 +21,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @promises = Promise.where(project_id: @project.id)
   end
 
   # GET /projects/new

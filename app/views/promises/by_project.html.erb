@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Promises</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Description</th>
+      <th>Etd</th>
+      <th>Project</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @promises_by_project.each do |promise| %>
+      <tr>
+        <td><%= promise.name %></td>
+        <td><%= promise.amount %></td>
+        <td><%= promise.description %></td>
+        <td><%= promise.etd %></td>
+        <td><%= promise.project.title %></td>
+        <td><%= link_to 'Show', promise %></td>
+        <td><%= link_to 'Edit', edit_promise_path(promise) %></td>
+        <td><%= link_to 'Destroy', promise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Promise', new_promise_path  , { :class=>"btn btn-primary" } %>

@@ -7,6 +7,10 @@ class PromisesController < ApplicationController
     @promises = Promise.all
   end
 
+  def by_project
+    @promises_by_project = Promise.where(project_id: params[:id])
+  end
+
   # GET /promises/1
   # GET /promises/1.json
   def show
