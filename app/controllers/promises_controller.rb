@@ -14,6 +14,7 @@ class PromisesController < ApplicationController
   # GET /promises/1
   # GET /promises/1.json
   def show
+    @project = Project.find(@promise.project_id)
   end
 
   # GET /promises/new

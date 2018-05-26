@@ -15,8 +15,6 @@ Rails.application.routes.draw do
 
   get "/users/:id/projects/", to: "projects#projectsbyuser"
 
-  get "/categories", to: "categories#index"
-
   get "/", to: "projects#index"
 
   get "/users/:id", to: "users#show"
@@ -50,6 +48,14 @@ Rails.application.routes.draw do
   patch "/projects/:id", to: "projects#update"
 
   get "/categories/:id", to: "categories#show"
+
+  get "/categories", to: "categories#index"
+
+  post "/categories", to: "categories#create"
+
+  delete "/categories/:id", to: "categories#destroy"
+
+  patch "/categories/:id", to: "categories#update"
 
   get "/userpasswords/:id", to: "userpasswords#show"
 

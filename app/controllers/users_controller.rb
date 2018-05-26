@@ -7,8 +7,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-
-
   # GET /users/1
   # GET /users/1.json
   def show
@@ -26,7 +24,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(project_params)
+    @user = User.new(user_params)
 
     respond_to do |format|
       if @user.save
@@ -43,7 +41,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(project_params)
+      if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -58,7 +56,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,7 +68,7 @@ class UsersController < ApplicationController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def project_params
-    params.require(:user).permit(:title, :markdown, :description, :goalamount, :currentamount, :approved, :deadline, :category_id)
+  def user_params
+    params.require(:user).permit(:name, :last_name, :description, :gender, :phone, :birthday, :is_admin, :address, :email, :password)
   end
 end
