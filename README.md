@@ -9,7 +9,7 @@ the user with the id 1 has every project
 
 Bugs(?):
 Projects still ask for current amount and approved when created
-Can't edit categories (but can create and delete them)
+Can't edit categories and promises (but can create and delete them)
 
 
 
