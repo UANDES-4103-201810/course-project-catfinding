@@ -14,8 +14,7 @@
       <th>Deadline</th>
       <th>Category</th>
       <th>User</th>
-      <th>Outstanding?</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -31,7 +30,11 @@
         <td><%= project.deadline %></td>
         <td><%= project.category.name %></td>
         <td><%= project.user_project.user.name %></td>
-        <td><%= project.outstanding %></td>
+        <% if project.outstanding %>
+          <td><i class="material-icons">star</i></td>
+        <% else %>
+        <td></td>
+        <% end %>
         <td><%= link_to 'Show', project %></td>
         <% if user_signed_in? %>
           <% if current_user.is_admin%>

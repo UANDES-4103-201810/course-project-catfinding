@@ -28,7 +28,7 @@ date_1 = Date.new(2018, 9, 1)
 date_2 = Date.new(2018, 9, 2)
 
 
-project_1 = Project.create(title: 'Proyecto 1', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, category: catt_1)
+project_1 = Project.create(title: 'Proyecto 1', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, category: catt_1, outstanding: true)
 project_2 = Project.create(title: 'Proyecto 2', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, category: catt_2)
 project_3 = Project.create(title: 'Proyecto 3', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, category: catt_3)
 project_4 = Project.create(title: 'Proyecto 4', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_5, category: catt_4)
