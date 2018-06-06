@@ -70,3 +70,5 @@ gem 'bootstrap-sass'
 gem 'sprockets-rails'
 
 gem 'jquery-rails'
+
+gem "paperclip", "~> 6.0.0"
