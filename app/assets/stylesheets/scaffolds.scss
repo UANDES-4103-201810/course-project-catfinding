@@ -85,7 +85,7 @@ label {
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
   background: #f0c699 !important;
   color : black !important;
-  border-color: #4d3518 !important;
+  border-color: #4d2d1c !important;
   border-width: medium !important;
   alignment: inherit !important;
 }
@@ -128,4 +128,9 @@ td {
 .div-child {
   height: 100% !important;
   display: inline-block !important;
+}
+
+.btn-secondary {
+  background: #4d2d1c !important;
+  color: #f0c699 !important;
 }

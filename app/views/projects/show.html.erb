@@ -3,7 +3,7 @@
   <div style="float: left;">
     <%= image_tag @project.avatar.url(:medium) %>
     <br>
-    <%= link_to "Download", @project.avatar.url(:original, false), {:class => "btn btn-primary"} %>
+    <%= link_to "Download", @project.avatar.url(:original, false), {:class => "btn btn-secondary btn-s"} %>
   </div>
   <div class="container">
   <div style="float: left;margin-left: 50px">
@@ -90,7 +90,7 @@
 
 <%= link_to 'Edit', edit_project_path(@project)  , { :class=>"btn btn-primary" } %>
 <%= link_to 'Back', projects_path, {:class => "btn btn-primary"} %>
-<% if user_signed_in? %> 
+<% if user_signed_in? %>
   <% if current_user.is_admin || @project.user.id == current_user.id %>
     <%= link_to 'New Promise', new_promise_path, {:class => "btn btn-primary"} %>
   <% end %>
