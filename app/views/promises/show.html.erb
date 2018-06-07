@@ -1,29 +1,37 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div style="float: left;">
+    <%= image_tag @promise.avatar.url(), style: "height: 200px" %>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @promise.name %>
-</p>
+  <div class="container">
+    <div style="float: left;margin-left: 50px">
+      <p>
+        <strong>Name:</strong>
+        <%= @promise.name %>
+      </p>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @promise.amount %>
-</p>
+      <p>
+        <strong>Amount:</strong>
+        <%= @promise.amount %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @promise.description %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @promise.description %>
+      </p>
 
-<p>
-  <strong>Etd:</strong>
-  <%= @promise.etd %>
-</p>
+      <p>
+        <strong>Etd:</strong>
+        <%= @promise.etd %>
+      </p>
 
-<p>
-  <strong>Project:</strong>
-  <%= @project.title %>
-</p>
-
+      <p>
+        <strong>Project:</strong>
+        <%= @project.title %>
+      </p>
+</div>
+</div>
+</div>
 <%= link_to 'Edit', edit_promise_path(@promise)   , { :class=>"btn btn-primary" }%> |
 <%= link_to 'Back', projects_path, {:class => "btn btn-primary"} %>
