@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :promises
   resources :projects
   resources :categories
-  devise_for :users, :controllers => { registrations: 'users/registrations' }
+  devise_for :users, controllers: {:omniauth_callbacks => "callbacks"}
   resources :users
   resources :userpasswords
   resources :welcome
