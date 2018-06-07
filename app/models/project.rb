@@ -1,14 +1,15 @@
 class Project < ApplicationRecord
-  belongs_to :category
+  has_many :project_categories
+  has_many :categories, through: :project_categories
   has_many :promises
-  has_one :user_project
-  has_one :user, through: :user_project
+
+  belongs_to :user
   has_many :user_fund_projects
   has_many :users, through: :user_fund_projects
   has_many :wishlist_projects
   has_many :wishlists, through: :wishlist_projects
 
-  has_attached_file :avatar, styles: { medium: "252x313>", thumb: "100x100>" }, default_url: "/assets/gato_user.png"
+  has_attached_file :avatar, styles: { medium: "252x313>", thumb: "100x100>" }, default_url: "/assets/gato_project.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
 

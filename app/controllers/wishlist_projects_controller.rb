@@ -28,7 +28,7 @@ class WishlistProjectsController < ApplicationController
 
     respond_to do |format|
       if @wishlist_project.save
-        format.html { redirect_to @wishlist_project, notice: 'Wishlist project was successfully created.' }
+        format.html { redirect_to @wishlist_project, notice: 'Project was successfully added to the wishlist.' }
         format.json { render :show, status: :created, location: @wishlist_project }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class WishlistProjectsController < ApplicationController
   def destroy
     @wishlist_project.destroy
     respond_to do |format|
-      format.html { redirect_to wishlist_projects_url, notice: 'Wishlist project was successfully destroyed.' }
+      format.html { redirect_to wishlist_projects_url, notice: 'Project was successfully removed from the wishlist.' }
       format.json { head :no_content }
     end
   end

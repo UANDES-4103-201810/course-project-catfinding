@@ -12,7 +12,6 @@
       <th>Currentamount</th>
       <th>Approved</th>
       <th>Deadline</th>
-      <th>Category</th>
       <th>User</th>
       <th colspan="4"></th>
     </tr>
@@ -28,8 +27,7 @@
         <td><%= project.currentamount %></td>
         <td><%= project.approved %></td>
         <td><%= project.deadline %></td>
-        <td><%= project.category.name %></td>
-        <td><%= project.user_project.user.name %></td>
+        <td><%= project.user.name %></td>
         <% if project.outstanding %>
           <td><i class="material-icons">star</i></td>
         <% else %>

@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @promises = Promise.where(project_id: @project.id)
+    @categories = @project.categories
   end
 
   # GET /projects/new
@@ -40,7 +41,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to "/users/%s/projects/:%s" % [current_user.id,@project.id] }
+        format.html { redirect_to "/users/%s/projects/%s" % [current_user.id,@project.id], notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -81,6 +82,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :markdown, :description, :goalamount, :currentamount, :approved, :deadline, :category_id)
+      params.require(:project).permit(:title, :markdown, :description, :goalamount, :currentamount, :approved, :deadline, :category_id, :avatar, :user_id)
     end
 end

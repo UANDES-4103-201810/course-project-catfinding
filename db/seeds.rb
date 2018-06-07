@@ -10,8 +10,9 @@ date_4 = Date.new(1996, 9, 3)
 date_5 = Date.new(1980, 1, 4)
 date_6 = Date.new(1993, 12, 22)
 
-user_1 = User.create(name: 'Francisco',password: 'lalala', last_name: 'Borie', phone: '123456789', gender: 'M', description: 'lalalalala',  email: 'fjborie@miuandes.cl', address: 'San Carlos de Apoquindo 2200', birthday: date_4, is_admin: true)
+user_2 = User.create(name: 'Francisco',password: 'lalala', last_name: 'Borie', phone: '123456789', gender: 'M', description: 'lalalalala',  email: 'fjborie@miuandes.cl', address: 'San Carlos de Apoquindo 2200', birthday: date_4, is_admin: true)
 user_1 = User.create(name: 'Max',password: '123456', last_name: 'Garcia', phone: '123456789', gender: 'M', description: 'lalalalala',  email: 'mrgarcia1@miuandes.cl', address: 'San Carlos de Apoquindo 2200', birthday: date_5)
+user_3 = User.create(name: 'Espe',password: 'qwerty', last_name: 'Uribe', phone: '123456789', gender: 'F', description: 'lalalalala',  email: 'eruribe@miuandes.cl', address: 'San Carlos de Apoquindo 2200', birthday: date_6)
 
 
 catt_1 = Category.create(name: 'Design & Tech')
@@ -28,24 +29,16 @@ date_1 = Date.new(2018, 9, 1)
 date_2 = Date.new(2018, 9, 2)
 
 
-project_1 = Project.create(title: 'Proyecto 1', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, category: catt_1, outstanding: true)
-project_2 = Project.create(title: 'Proyecto 2', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, category: catt_2)
-project_3 = Project.create(title: 'Proyecto 3', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, category: catt_3)
-project_4 = Project.create(title: 'Proyecto 4', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_5, category: catt_4)
-project_5 = Project.create(title: 'Proyecto 5', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_5, category: catt_5)
-project_6 = Project.create(title: 'Proyecto 6', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_5, category: catt_6)
-project_7 = Project.create(title: 'Proyecto 7', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_6, category: catt_7)
-project_8 = Project.create(title: 'Proyecto 8', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_6, category: catt_8)
+project_1 = Project.create(title: 'Proyecto 1', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, outstanding: true, user: user_1)
+project_2 = Project.create(title: 'Proyecto 2', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, user: user_1)
+project_3 = Project.create(title: 'Proyecto 3', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, user: user_1)
+project_4 = Project.create(title: 'Proyecto 4', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_5, user: user_1)
+project_5 = Project.create(title: 'Proyecto 5', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_5, user: user_1)
+project_6 = Project.create(title: 'Proyecto 6', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_5, user: user_1)
+project_7 = Project.create(title: 'Proyecto 7', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_6, user: user_2)
+project_8 = Project.create(title: 'Proyecto 8', markdown: 'lalallalalalalalaa', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_6, user: user_3)
 
 promise_1 = Promise.create(name: 'Promise 1', amount: 30, description: 'kkjsgehgberkbghbuvfkjhvkjshvjshvgk', etd: date_2, project:project_1)
 promise_2 = Promise.create(name: 'Promise 2', amount: 45, description: 'kkjsgehgberkbghbuvfkjhvkjshvjshvgk', etd: date_2, project:project_1)
 
-userproject_1 = UserProject.create(user: user_1, project: project_1)
-userproject_2 = UserProject.create(user: user_1, project: project_2)
-userproject_3 = UserProject.create(user: user_1, project: project_3)
-userproject_4 = UserProject.create(user: user_1, project: project_4)
-userproject_5 = UserProject.create(user: user_1, project: project_5)
-userproject_6 = UserProject.create(user: user_1, project: project_6)
-userproject_7 = UserProject.create(user: user_1, project: project_7)
-userproject_8 = UserProject.create(user: user_1, project: project_8)
 

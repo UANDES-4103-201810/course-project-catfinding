@@ -28,7 +28,7 @@ class UserFundProjectsController < ApplicationController
 
     respond_to do |format|
       if @user_fund_project.save
-        format.html { redirect_to @user_fund_project, notice: 'User fund project was successfully created.' }
+        format.html { redirect_to @user_fund_project, notice: 'Project was successfully funded.' }
         format.json { render :show, status: :created, location: @user_fund_project }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class UserFundProjectsController < ApplicationController
   def destroy
     @user_fund_project.destroy
     respond_to do |format|
-      format.html { redirect_to user_fund_projects_url, notice: 'User fund project was successfully destroyed.' }
+      format.html { redirect_to user_fund_projects_url, notice: 'Fund was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
