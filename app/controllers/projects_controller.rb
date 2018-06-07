@@ -7,9 +7,8 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
-  def projectsbyuser
+  def projectsbyuser #arreglar esto
     @user = User.find(params[:id])
-    @user_projects = UserProject.where(user: @user)
   end
 
   # GET /projects/category/1

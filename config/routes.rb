@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :user_fund_projects
   resources :wishlist_projects
   resources :wishlists
-  resources :user_projects
   resources :promises
   resources :projects
   resources :categories
@@ -67,7 +66,6 @@ Rails.application.routes.draw do
 
   patch "/userpasswords/:id", to: "userpasswords#update"
 
-  post "/users/:user_id/projects/:project_id", to: "user_projects#create"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -3,8 +3,7 @@ class User < ApplicationRecord
   has_many :projects
   has_one :wishlist
   has_many :projects, through: :wishlist
-  has_many :user_projects
-  has_many :projects, through: :user_projects
+  has_many :projects
   has_one :user_role
 
   has_attached_file :avatar, styles: { medium: "252x313>", thumb: "100x100>" }, default_url: "/assets/gato_user.png"
