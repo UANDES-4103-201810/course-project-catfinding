@@ -1,43 +1,52 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div style="float: left; border-width: thick">
+  <%= image_tag @user.avatar.url(:medium)%>
+</div>
+  <div style="float: left">
+    <br>
+  </div>
+  <div class="container">
+  <div style="float: left;margin-left: 50px">
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
 
-<%= image_tag @user.avatar.url(:medium)%>
+    <p>
+      <strong>Name:</strong>
+      <%= @user.name %>
+    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+    <p>
+      <strong>Last Name:</strong>
+      <%= @user.last_name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @user.phone %>
+    </p>
 
-<p>
-  <strong>Last Name:</strong>
-  <%= @user.last_name %>
-</p>
+    <p>
+      <strong>Gender:</strong>
+      <%= @user.gender %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @user.description %>
+    </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @user.description %>
-</p>
-
-<p>
-  <strong>Birthday:</strong>
-  <%= @user.birthday %>
-</p>
-
-
+    <p>
+      <strong>Birthday:</strong>
+      <%= @user.birthday %>
+    </p>
+</div>
+</div>
+</div>
+<br>
+<br>
 
 <%= link_to 'Edit', edit_user_path(@user) , { :class=>"btn btn-primary" }%>
 <%= link_to 'Back', users_path , { :class=>"btn btn-primary" }%>
