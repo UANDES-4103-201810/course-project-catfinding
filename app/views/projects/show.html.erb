@@ -1,55 +1,62 @@
 <p id="notice"><%= notice %></p>
-<div class="container-fluid">
-  <div style="float: left;">
+<div class="container-fluid" style="width: 100% ;display:table;">
+  <div  style="display:table-cell;  ">
     <%= image_tag @project.avatar.url(:medium) %>
     <br>
     <%= link_to "Download", @project.avatar.url(:original, false), {:class => "btn btn-secondary btn-s"} %>
   </div>
-  <div class="container">
-  <div style="float: left;margin-left: 50px">
-  <p>
-    <strong>Title:</strong>
-    <%= @project.title %>
-  </p>
+  <div  style="display:table-cell;">
+    <p>
+      <strong>Title:</strong>
+      <%= @project.title %>
+    </p>
 
-  <p>
-    <strong>Markdown:</strong>
-    <%= @project.markdown %>
-  </p>
+    <p>
+      <strong>Markdown:</strong>
+      <%= @project.markdown %>
+    </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @project.description %>
-  </p>
+    <p>
+      <strong>Description:</strong>
+      <%= @project.description %>
+    </p>
 
-  <p>
-    <strong>Goalamount:</strong>
-    <%= @project.goalamount %>
-  </p>
+    <p>
+      <strong>Goalamount:</strong>
+      <%= @project.goalamount %>
+    </p>
 
-  <p>
-    <strong>Currentamount:</strong>
-    <%= @project.currentamount %>
-  </p>
+    <p>
+      <strong>Currentamount:</strong>
+      <%= @project.currentamount %>
+    </p>
 
-  <p>
-    <strong>Approved:</strong>
-    <%= @project.approved %>
-  </p>
+    <p>
+      <strong>Approved:</strong>
+      <%= @project.approved %>
+    </p>
 
-  <p>
-    <strong>Deadline:</strong>
-    <%= @project.deadline %>
-  </p>
+    <p>
+      <strong>Deadline:</strong>
+      <%= @project.deadline %>
+    </p>
 
-  <p>
-    <strong>Category:</strong>
-    <% @categories.each do |c| %>
-    <%= c.name %>
-      <% end %>
-  </p>
+    <p>
+      <strong>Category:</strong>
+      <% @categories.each do |c| %>
+      <%= c.name %>
+        <% end %>
+    </p>
   </div>
-</div>
+  <div  style="display:table-cell; " >
+      <button class="btn btn-primary" style="align-content: center;text-align: center; align-items: center">
+        Send your love & support!
+        <br>
+        (And money)
+        <br>
+        <i class="material-icons">plus_one</i> <i class="material-icons">favorite_border</i>
+      </button>
+  </div>
 </div>
 <h3>Promises</h3>
 <% if (not @promises.nil?) && (not @promises.empty?) %> <!-- no se si esto esta bien, arreglar -->
