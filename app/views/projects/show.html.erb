@@ -1,45 +1,52 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div style="float: left;">
+    <%= image_tag @project.avatar.url(:medium) %>
+  </div>
+  <div class="container" style="margin-left: 50px">
+  <div>
+  <p>
+    <strong>Title:</strong>
+    <%= @project.title %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+  <p>
+    <strong>Markdown:</strong>
+    <%= @project.markdown %>
+  </p>
 
-<p>
-  <strong>Markdown:</strong>
-  <%= @project.markdown %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @project.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+  <p>
+    <strong>Goalamount:</strong>
+    <%= @project.goalamount %>
+  </p>
 
-<p>
-  <strong>Goalamount:</strong>
-  <%= @project.goalamount %>
-</p>
+  <p>
+    <strong>Currentamount:</strong>
+    <%= @project.currentamount %>
+  </p>
 
-<p>
-  <strong>Currentamount:</strong>
-  <%= @project.currentamount %>
-</p>
+  <p>
+    <strong>Approved:</strong>
+    <%= @project.approved %>
+  </p>
 
-<p>
-  <strong>Approved:</strong>
-  <%= @project.approved %>
-</p>
+  <p>
+    <strong>Deadline:</strong>
+    <%= @project.deadline %>
+  </p>
 
-<p>
-  <strong>Deadline:</strong>
-  <%= @project.deadline %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @project.category.name %>
-</p>
-
+  <p>
+    <strong>Category:</strong>
+    <%= @project.category.name %>
+  </p>
+  </div>
+</div>
+</div>
 <h3>Promises</h3>
 <% if not @promises.nil? %> <!-- no se si esto esta bien, arreglar -->
 <table class="table table-striped table-hover">
