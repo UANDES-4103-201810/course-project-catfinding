@@ -72,3 +72,9 @@ gem 'sprockets-rails'
 gem 'jquery-rails'
 
 gem "paperclip", "~> 6.0.0"
+
+gem 'therubyracer'
+
+gem 'omniauth'
+
+gem 'omniauth-facebook'

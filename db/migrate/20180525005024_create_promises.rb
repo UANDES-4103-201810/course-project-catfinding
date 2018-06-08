@@ -4,7 +4,7 @@ class CreatePromises < ActiveRecord::Migration[5.2]
       t.string :name, null: false, default: ""
       t.integer :amount, null: false, default: 0
       t.text :description, null: false, default: ""
-      t.date :etd, null: false, default: (20500505)
+      t.date :etd, null: false, default: Date.new(2020, 10, 10)
       t.references :project, foreign_key: true
 
       t.timestamps

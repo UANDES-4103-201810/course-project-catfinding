@@ -14,19 +14,19 @@
   </thead>
 
   <tbody>
-    <% @user_projects.each do |userproject| %>
+    <% @projects.each do |project| %>
       <tr>
-        <td><%= userproject.project.title %></td>
-        <td><%= userproject.project.markdown %></td>
-        <td><%= userproject.project.description %></td>
-        <td><%= userproject.project.goalamount %></td>
-        <td><%= userproject.project.currentamount %></td>
-        <td><%= userproject.project.approved %></td>
-        <td><%= userproject.project.deadline %></td>
-        <td><%= userproject.project.category.name %></td>
-        <td><%= link_to 'Show', userproject.project %></td>
-        <td><%= link_to 'Edit', edit_project_path(userproject.project) %></td>
-        <td><%= link_to 'Destroy', userproject.project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= project.title %></td>
+        <td><%= project.markdown %></td>
+        <td><%= project.description %></td>
+        <td><%= project.goalamount %></td>
+        <td><%= project.currentamount %></td>
+        <td><%= project.approved %></td>
+        <td><%= project.deadline %></td>
+        <td><%= project.category_id %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
