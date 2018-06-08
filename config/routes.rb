@@ -10,11 +10,13 @@ Rails.application.routes.draw do
   resources :userpasswords
   resources :welcome
 
+  root "projects#index"
+
+  get "/", to: "projects#index"
+
   get "projects/:id/promises", to: "promises#by_project"
 
   get "/users/:id/projects/", to: "projects#projectsbyuser"
-
-  get "/", to: "projects#index"
 
   get "/users/:id", to: "users#show"
 
@@ -65,6 +67,9 @@ Rails.application.routes.draw do
   delete "/userpasswords/:id", to: "userpasswords#destroy"
 
   patch "/userpasswords/:id", to: "userpasswords#update"
+
+  get "fund_project/:project_id/:user_id", to: "user_fund_project#new"
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -15,6 +15,8 @@ class UserFundProjectsController < ApplicationController
   # GET /user_fund_projects/new
   def new
     @user_fund_project = UserFundProject.new
+    @user = User.find(params[:user_id])
+    @project = Project.find(params[:project_id])
   end
 
   # GET /user_fund_projects/1/edit
@@ -69,6 +71,6 @@ class UserFundProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_fund_project_params
-      params.require(:user_fund_project).permit(:user_id, :project_id)
+      params.require(:user_fund_project).permit(:user_id, :project_id, :amount)
     end
 end
