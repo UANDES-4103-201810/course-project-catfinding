@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2018_06_08_154911) do
     t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "amount"
+    t.integer "amount", default: 0
     t.index ["project_id"], name: "index_user_fund_projects_on_project_id"
     t.index ["user_id"], name: "index_user_fund_projects_on_user_id"
   end
