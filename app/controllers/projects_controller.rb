@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-
+    @promises = Promise.where(project_id: params[:id])
     @categories = @project.categories
   end
 

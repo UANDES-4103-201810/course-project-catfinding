@@ -82,12 +82,13 @@ div {
 label {
   display: block;
 }
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, input[type=submit] {
   background: #f0c699 !important;
   color : black !important;
   border-color: #4d2d1c !important;
   border-width: medium !important;
   alignment: inherit !important;
+  border-radius: 5px !important;
 }
 
 .navbar-inverse, .navbar-nav, .nav>li>a{
@@ -113,6 +114,16 @@ td {
   border-color: transparent !important;
   border-width: thick !important;
   margin: 5px !important;
+  padding: 10px !important;
+}
+
+th {
+  width: max-content;
+  padding: 10px !important;
+}
+
+.table-sm {
+
 }
 
 .btn-table {
@@ -133,4 +144,5 @@ td {
 .btn-secondary {
   background: #4d2d1c !important;
   color: #f0c699 !important;
+  border-radius: 5px !important;
 }

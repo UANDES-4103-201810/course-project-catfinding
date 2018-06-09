@@ -15,8 +15,7 @@ class UserFundProjectsController < ApplicationController
   # GET /user_fund_projects/new
   def new
     @user_fund_project = UserFundProject.new
-    @user = User.find(params[:user_id])
-    @project = Project.find(params[:project_id])
+    @promises = Promise.where(project_id: params[:project_id])
   end
 
   # GET /user_fund_projects/1/edit
@@ -27,13 +26,12 @@ class UserFundProjectsController < ApplicationController
   # POST /user_fund_projects.json
   def create
     @user_fund_project = UserFundProject.new(user_fund_project_params)
-
     respond_to do |format|
       if @user_fund_project.save
-        format.html { redirect_to @user_fund_project, notice: 'Project was successfully funded.' }
+        format.html { redirect_to "/projects/%s" % [@user_fund_project.project_id], notice: 'Project was successfully funded.' }
         format.json { render :show, status: :created, location: @user_fund_project }
       else
-        format.html { render :new }
+        format.html { redirect_to "/user_fund_project/projects/%s" % [params[:project_id]]}
         format.json { render json: @user_fund_project.errors, status: :unprocessable_entity }
       end
     end

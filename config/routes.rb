@@ -68,7 +68,7 @@ Rails.application.routes.draw do
 
   patch "/userpasswords/:id", to: "userpasswords#update"
 
-  get "fund_project/:project_id/:user_id", to: "user_fund_project#new"
+  get "user_fund_project/projects/:project_id", to: "user_fund_projects#new"
 
 
 

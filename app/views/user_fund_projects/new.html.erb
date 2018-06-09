@@ -1,32 +1,115 @@
-<h1>New User Fund Project</h1>
+<h1>New Fund</h1>
 
-<%= form_for(@user_fund_project) do |form| %>
-  <% if user_fund_project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user_fund_project.errors.count, "error") %> prohibited this user_fund_project from being
-        saved:</h2>
+  <div class="field"> <!-- selector -->
+    <button class="btn-secondary" onclick="showd()">Want to donate?</button>
+    or...
+    <button class="btn-secondary" onclick="showp()">Want to buy a promise?</button>
+  </div>
 
-      <ul>
-        <% user_fund_project.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div id = "if-promise" style="display: none"> <!-- promise -->
+    <%= form_for(@user_fund_project) do |form| %>
+      <% if @user_fund_project.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user_fund_project.errors.count, "error") %> prohibited this user_fund_project from being
+            saved:</h2>
+
+          <ul>
+            <% @user_fund_project.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= form.label "Hey %s! You're about to buy a promise of the project %s" % [current_user.name, Project.find(params[:project_id]).title] %>
+      </div>
+      <div>
+        <%= form.hidden_field :user_id, :value => current_user.id %>
+        <%= form.hidden_field :project_id, :value => params[:project_id] %>
+        <table class="">
+          <thead >
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th colspan="1"></th>
+          </tr>
+          </thead>
+          <tbody>
+          <% if not @promises.nil? and not @promises.empty?  %>
+            <% @promises.each do |p| %>
+            <tr>
+              <td><%= p.name %></td>
+              <td><%= p.amount%></td>
+              <td><button class="btn btn-primary btn-xs" onclick="buypromise(p.amount)">Buy!</button> </td>
+            </tr>
+            <% end %>
+          <% else %>
+            <tr> You can't buy promises because this project doesn't have any!</tr>
+          <% end %>
+          <script>
+              function buypromise(x) {
+                  <%= form.hidden_field :amount, :value => x %>
+              }
+          </script>
+          </tbody>
+        </table>
+        <div class="actions">
+          <label>Is everything OK?</label>
+          <br>
+          <%= form.submit("OK!", {:class => "btn btn-primary"}) %>
+        </div>
+      </div>
+      <% end %>
+  </div>
+  
+  <div id = "if-donation" style="display: none"> <!-- donacion -->
+    <%= form_for(@user_fund_project) do |form| %>
+      <% if @user_fund_project.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user_fund_project.errors.count, "error") %> prohibited this user_fund_project from being
+            saved:</h2>
+
+          <ul>
+            <% @user_fund_project.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= form.label "Your name " %>
+        <%= form.label "%s" % [current_user.name] %>
+      </div>
+      <div class="field">
+        <%= form.label "The Project " %>
+        <%= form.label "%s" % [Project.find(params[:project_id]).title] %>
+      </div>
+
+    <div class="field">
+      <%= form.label "How much would you want to donate?" %>
+      <%= form.number_field :amount %>
+      <%= form.hidden_field :user_id, :value => current_user.id%>
+      <%= form.hidden_field :project_id, :value => params[:project_id]%>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label  %>
-    <%= form.text_field :user_id %>
+      <div class="actions">
+        <label>Is everything OK?</label>
+        <br>
+        <%= form.submit("OK!", {:class => "btn btn-primary"}) %>
+      </div>
+    <% end %>
   </div>
 
-  <div class="field">
-    <%= form.label :project_id %>
-    <%= form.text_field :project_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
 
 <%= link_to 'Back', user_fund_projects_path  , { :class=>"btn btn-primary" } %>
+
+<script>
+  function showd() {
+      document.getElementById('if-promise').style.display='none';
+      document.getElementById('if-donation').style.display='block';
+  }
+  function showp() {
+      document.getElementById('if-promise').style.display='block';
+      document.getElementById('if-donation').style.display='none';
+  }
+
+</script>
