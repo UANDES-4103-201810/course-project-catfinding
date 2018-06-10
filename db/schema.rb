@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2018_06_08_154911) do
     t.integer "goalamount", default: 0, null: false
     t.integer "currentamount", default: 0, null: false
     t.boolean "approved", default: false, null: false
-    t.date "deadline", default: "2050-05-05", null: false
+    t.date "deadline", default: "2020-10-10", null: false
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2018_06_08_154911) do
     t.string "name", default: "", null: false
     t.integer "amount", default: 0, null: false
     t.text "description", default: "", null: false
-    t.date "etd", default: "2050-05-05", null: false
+    t.date "etd", default: "2020-10-10", null: false
     t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
