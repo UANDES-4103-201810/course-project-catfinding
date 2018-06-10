@@ -26,7 +26,8 @@
       <div>
         <%= form.hidden_field :user_id, :value => current_user.id %>
         <%= form.hidden_field :project_id, :value => params[:project_id] %>
-        <table class="">
+        <% if not @promises.nil? and not @promises.empty?  %>
+          <table class="">
           <thead >
           <tr>
             <th>Name</th>
@@ -35,24 +36,20 @@
           </tr>
           </thead>
           <tbody>
-          <% if not @promises.nil? and not @promises.empty?  %>
+
             <% @promises.each do |p| %>
             <tr>
               <td><%= p.name %></td>
               <td><%= p.amount%></td>
-              <td><button class="btn btn-primary btn-xs" onclick="buypromise(p.amount)">Buy!</button> </td>
+              <td><button class="btn btn-primary btn-xs" onclick="buypromise(<%=p.amount%>)">Buy!</button> </td>
             </tr>
             <% end %>
-          <% else %>
-            <tr> You can't buy promises because this project doesn't have any!</tr>
-          <% end %>
-          <script>
-              function buypromise(x) {
-                  <%= form.hidden_field :amount, :value => x %>
-              }
-          </script>
           </tbody>
         </table>
+          <% else %>
+          <p> You can't buy promises because this project doesn't have any!</p>
+        <% end %>
+        <div id="text_to_be_changed"><%= @user_fund_project.amount %></div>
         <div class="actions">
           <label>Is everything OK?</label>
           <br>
@@ -111,5 +108,7 @@
       document.getElementById('if-promise').style.display='block';
       document.getElementById('if-donation').style.display='none';
   }
-
+  function buypromise(x) {
+      $('#text_to_be_changed').html(x);
+  }
 </script>
