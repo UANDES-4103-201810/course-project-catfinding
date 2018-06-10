@@ -48,6 +48,7 @@
         <% end %>
     </p>
   </div>
+  <a href="localhost:3000/user_fund_project/projects/<%=@project.id%>">
   <div  style="display:table-cell; " >
       <button class="btn btn-primary" onclick="redirect()" style="align-content: center;text-align: center; align-items: center">
           Send your love & support!
@@ -61,6 +62,7 @@
       }
     </script>
   </div>
+  </a>
 </div>
 <h3>Promises</h3>
 <% if not (@promises.nil? or @promises.empty?) %> <!-- no se si esto esta bien, arreglar -->
