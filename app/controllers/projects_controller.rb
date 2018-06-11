@@ -15,7 +15,8 @@ class ProjectsController < ApplicationController
   # GET /projects/category/1
   # GET /projects/category/1.json
   def index_by_cat
-    @projects_by_c = Project.where(category_id: params[:category_id])
+    @category = Category.find(params[:category_id])
+    @projects_by_c = @category.projects
   end
 
   # GET /projects/1
