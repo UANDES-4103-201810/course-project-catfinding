@@ -4,6 +4,15 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    @user = current_user
+    if not user_signed_in?
+        render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+    end
+    if user_signed_in?
+      if not @user.is_admin
+        render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+      end
+    end
     @users = User.all
   end
 
@@ -19,6 +28,16 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if not user_signed_in?
+      render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+    end
+    if user_signed_in?
+      if not current_user.is_admin
+        if current_user != @user
+          render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+        end
+      end
+    end
   end
 
   # POST /users

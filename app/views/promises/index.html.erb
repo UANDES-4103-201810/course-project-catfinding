@@ -23,8 +23,13 @@
         <td><%= promise.etd %></td>
         <td><%= promise.project %></td>
         <td><%= link_to 'Show', promise %></td>
-        <td><%= link_to 'Edit', edit_promise_path(promise) %></td>
-        <td><%= link_to 'Destroy', promise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>
+          <% if current_user.is_admin%>
+            <td><%= link_to 'Edit', edit_promise_path(promise) %></td>
+            <td><%= link_to 'Destroy', promise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+
+        <% end %>
       </tr>
     <% end %>
   </tbody>

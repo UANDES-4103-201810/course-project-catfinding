@@ -19,11 +19,17 @@ class PromisesController < ApplicationController
 
   # GET /promises/new
   def new
+    if not user_signed_in?
+      render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+    end
     @promise = Promise.new
   end
 
   # GET /promises/1/edit
   def edit
+    if not user_signed_in?
+      render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+    end
   end
 
   # POST /promises
@@ -59,6 +65,9 @@ class PromisesController < ApplicationController
   # DELETE /promises/1
   # DELETE /promises/1.json
   def destroy
+    if not user_signed_in?
+      render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+    end
     @promise.destroy
     respond_to do |format|
       format.html { redirect_to promises_url, notice: 'Promise was successfully destroyed.' }
