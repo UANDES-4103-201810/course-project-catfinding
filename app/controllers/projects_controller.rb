@@ -5,6 +5,12 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+    if params[:search]
+      @projects = Project.search(params[:search])
+    else
+      @projects = Project.all
+      flash[:alert] = "There are no projects that matches your search"
+    end
   end
 
   def projectsbyuser
