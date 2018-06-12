@@ -28,6 +28,7 @@ class UserFundProjectsController < ApplicationController
     @user_fund_project = UserFundProject.new(user_fund_project_params)
     respond_to do |format|
       if @user_fund_project.save
+        FundMailer.donation_mail(@user_fund_project).deliver_now
         format.html { redirect_to "/projects/%s" % [@user_fund_project.project_id], notice: 'Project was successfully funded.' }
         format.json { render :show, status: :created, location: @user_fund_project }
       else

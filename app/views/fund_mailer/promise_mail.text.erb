@@ -1,0 +1,9 @@
+
+Dear <%= @user.name %>
+===============================================
+
+You have successfully bought a promise from <%= Project.find(@fund.project_id) %>.
+
+To confirm your purchase, just follow this link: <%= @url %>.
+
+Thanks!

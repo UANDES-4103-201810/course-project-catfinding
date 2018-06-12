@@ -72,6 +72,9 @@ Rails.application.routes.draw do
 
   post '/user_buy_promise_project', to: "user_fund_projects#buy_promise"
 
+  get "/user_fund_project/:id/confirm", to: "user_fund_projects#confirm"
+
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
