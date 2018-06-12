@@ -61,6 +61,19 @@ class UserFundProjectsController < ApplicationController
     end
   end
 
+  def buy_promise
+    @user_fund_project = UserFundProject.new(user_id: current_user.id, project_id: params[:project_id], amount: params[:amount])
+    respond_to do |format|
+      if @user_fund_project.save
+        format.html { redirect_to "/projects/%s" % [@user_fund_project.project_id], notice: 'Promise was successfully bought.' }
+        format.json { render :show, status: :created, location: @user_fund_project }
+      else
+        format.html { redirect_to "/user_fund_project/projects/%s" % [params[:project_id]]}
+        format.json { render json: @user_fund_project.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user_fund_project

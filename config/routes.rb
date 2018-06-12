@@ -70,6 +70,8 @@ Rails.application.routes.draw do
 
   get "user_fund_project/projects/:project_id", to: "user_fund_projects#new"
 
+  post '/user_buy_promise_project', to: "user_fund_projects#buy_promise"
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
