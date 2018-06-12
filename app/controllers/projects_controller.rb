@@ -34,12 +34,28 @@ class ProjectsController < ApplicationController
 
   # GET /projects/new
   def new
-    @project = Project.new
+    if user_signed_in?
+      @project = Project.new
+    else
+      render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+    end
   end
 
   # GET /projects/1/edit
   def edit
-  end
+    @user = current_user
+    if not user_signed_in?
+      render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+    end
+    if user_signed_in?
+      if not @user.is_admin
+         if @project.user != @user
+           render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+         end
+      end
+      end
+    end
+
 
   # POST /projects
   # POST /projects.json

@@ -14,11 +14,31 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
+    @user = current_user
+    if not user_signed_in?
+      render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+    end
+
+    if user_signed_in?
+      if not @user.is_admin
+        render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+      end
+    end
     @category = Category.new
   end
 
   # GET /categories/1/edit
   def edit
+    @user = current_user
+    if not user_signed_in?
+      render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+    end
+
+    if user_signed_in?
+      if not @user.is_admin
+        render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+      end
+    end
   end
 
   # POST /categories
