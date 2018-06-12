@@ -11,7 +11,7 @@ date_5 = Date.new(1980, 1, 4)
 date_6 = Date.new(1993, 12, 22)
 
 user_2 = User.create(name: 'Francisco',password: 'lalala', last_name: 'Borie', phone: '123456789', gender: 'M', description: 'lalalalala',  email: 'fjborie@miuandes.cl', address: 'San Carlos de Apoquindo 2200', birthday: date_4, is_admin: true)
-user_1 = User.create(name: 'Max',password: '123456', last_name: 'Garcia', phone: '123456789', gender: 'M', description: 'lalalalala',  email: 'mrgarcia1@miuandes.cl', address: 'San Carlos de Apoquindo 2200', birthday: date_5)
+user_1 = User.create(name: 'Max',password: '123456', last_name: 'Garcia', phone: '123456789', gender: 'O', description: 'lalalalala',  email: 'mrgarcia1@miuandes.cl', address: 'San Carlos de Apoquindo 2200', birthday: date_5)
 user_3 = User.create(name: 'Espe',password: 'qwerty', last_name: 'Uribe', phone: '123456789', gender: 'F', description: 'lalalalala',  email: 'eruribe@miuandes.cl', address: 'San Carlos de Apoquindo 2200', birthday: date_6)
 
 
