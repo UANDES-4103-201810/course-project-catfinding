@@ -17,4 +17,8 @@ class Project < ApplicationRecord
   validates :goalamount, numericality: { greater_than: 0 }
   validates :title, length: { minimum: 3 }
   validates :markdown, length: { minimum: 3 }
+
+  def self.search(search)
+    where("title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%")
+  end
 end
