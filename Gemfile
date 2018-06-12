@@ -80,3 +80,5 @@ gem 'therubyracer'
 gem 'omniauth'
 
 gem 'omniauth-facebook'
+
+gem 'redcarpet', '~> 3.4.0'
