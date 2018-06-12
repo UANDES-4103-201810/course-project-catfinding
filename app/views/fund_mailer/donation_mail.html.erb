@@ -1,12 +1,11 @@
 <h1>
-Dear <%= @user.name %>
+Hi <%= @user.name %> !!
 </h1>
-===============================================
+
 <p>
 You have successfully donated money to <%= Project.find(@fund.project_id).title %>.
 
-To confirm your purchase, just follow this link:.
-<a href="<%= @url %>"> URL </a>
+To confirm your purchase, just follow this<a href="<%= @url %>"> link </a> .
 
 Thanks!
 </p>

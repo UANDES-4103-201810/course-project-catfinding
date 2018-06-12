@@ -20,6 +20,8 @@ class UserFundProjectsController < ApplicationController
 
   # GET /user_fund_projects/1/edit
   def edit
+    @user = User.find(@user_fund_project.user_id)
+    @project = Project.find(@user_fund_project.project_id)
   end
 
   # POST /user_fund_projects
@@ -29,7 +31,7 @@ class UserFundProjectsController < ApplicationController
     respond_to do |format|
       if @user_fund_project.save
         FundMailer.donation_mail(@user_fund_project).deliver_now
-        format.html { redirect_to "/projects/%s" % [@user_fund_project.project_id], notice: 'Project was successfully funded.' }
+        format.html { redirect_to "/projects/%s" % [@user_fund_project.project_id], notice: 'We created a fund request and send you an email confirmation. Check your mail!' }
         format.json { render :show, status: :created, location: @user_fund_project }
       else
         format.html { redirect_to "/user_fund_project/projects/%s" % [params[:project_id]]}
@@ -42,8 +44,8 @@ class UserFundProjectsController < ApplicationController
   # PATCH/PUT /user_fund_projects/1.json
   def update
     respond_to do |format|
-      if @user_fund_project.update(user_fund_project_params)
-        format.html { redirect_to @user_fund_project, notice: 'User fund project was successfully updated.' }
+      if @user_fund_project.update(id: params[:id], amount: params[:amount])
+        format.html { redirect_to "/projects/%s" % [@user_fund_project.project_id], notice: 'Fund project was successfully confirmed.' }
         format.json { render :show, status: :ok, location: @user_fund_project }
       else
         format.html { render :edit }
@@ -66,7 +68,8 @@ class UserFundProjectsController < ApplicationController
     @user_fund_project = UserFundProject.new(user_id: current_user.id, project_id: params[:project_id], amount: params[:amount])
     respond_to do |format|
       if @user_fund_project.save
-        format.html { redirect_to "/projects/%s" % [@user_fund_project.project_id], notice: 'Promise was successfully bought.' }
+        FundMailer.promise_mail(@user_fund_project).deliver_now
+        format.html { redirect_to "/projects/%s" % [@user_fund_project.project_id], notice: 'We created a fund request and send you an email confirmation. Check your mail!' }
         format.json { render :show, status: :created, location: @user_fund_project }
       else
         format.html { redirect_to "/user_fund_project/projects/%s" % [params[:project_id]]}
