@@ -72,7 +72,9 @@ Rails.application.routes.draw do
 
   post '/user_buy_promise_project', to: "user_fund_projects#buy_promise"
 
-  get "/user_fund_project/:id/confirm", to: "user_fund_projects#confirm"
+  get "/user_fund_project/:id/confirm", to: "user_fund_projects#edit"
+
+  post "/user_fund_project_confirm/:id", to: "user_fund_projects#update"
 
 
 
