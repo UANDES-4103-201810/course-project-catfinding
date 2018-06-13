@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2018_06_12_211749) do
 
   create_table "projects", force: :cascade do |t|
     t.string "title", default: "", null: false
-    t.text "markdown", default: "", null: false
     t.text "description", default: "", null: false
     t.integer "goalamount", default: 0, null: false
     t.integer "currentamount", default: 0, null: false
