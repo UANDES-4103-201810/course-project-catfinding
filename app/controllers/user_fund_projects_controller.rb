@@ -44,7 +44,7 @@ class UserFundProjectsController < ApplicationController
   # PATCH/PUT /user_fund_projects/1.json
   def update
     respond_to do |format|
-      if @user_fund_project.update(id: params[:id], amount: params[:amount])
+      if @user_fund_project.update(id: params[:id], confirmed: true)
         format.html { redirect_to "/projects/%s" % [@user_fund_project.project_id], notice: 'Fund project was successfully confirmed.' }
         format.json { render :show, status: :ok, location: @user_fund_project }
       else

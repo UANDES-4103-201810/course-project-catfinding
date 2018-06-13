@@ -60,14 +60,6 @@ Rails.application.routes.draw do
 
   patch "/categories/:id", to: "categories#update"
 
-  get "/userpasswords/:id", to: "userpasswords#show"
-
-  post "/userpasswords", to: "userpasswords#create"
-
-  delete "/userpasswords/:id", to: "userpasswords#destroy"
-
-  patch "/userpasswords/:id", to: "userpasswords#update"
-
   get "user_fund_project/projects/:project_id", to: "user_fund_projects#new"
 
   post '/user_buy_promise_project', to: "user_fund_projects#buy_promise"
@@ -75,6 +67,8 @@ Rails.application.routes.draw do
   get "/user_fund_project/:id/confirm", to: "user_fund_projects#edit"
 
   post "/user_fund_project_confirm/:id", to: "user_fund_projects#update"
+
+  post "/project_update_fund/:id/:amount", to: "projects#update_amount"
 
 
 

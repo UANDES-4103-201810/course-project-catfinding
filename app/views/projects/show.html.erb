@@ -1,4 +1,13 @@
 <p id="notice"><%= notice %></p>
+<script>
+    x = current_amount(<%= UserFundProject.find_by(project_id: @project.id) %>);
+    document.getElementById("demo").innerHTML = x;
+    function current_amount(amounts) {
+        var suma = 0;
+        amounts.forEach(y => suma+=parseInt(y));
+        return suma
+    }
+</script>
 <div class="container-fluid" style="width: 100% ;display:table;">
   <div  style="display:table-cell;  ">
     <%= image_tag @project.avatar.url(:medium) %>
@@ -42,11 +51,17 @@
   <a href="localhost:3000/user_fund_project/projects/<%=@project.id%>">
   <div  style="display:table-cell; " >
     <%= link_to "Send your love & support! \n (And money)", "/user_fund_project/projects/"+ @project.id.to_s, class: "btn btn-primary"%>
+    <br>
+    <br>
+    <h4><strong>Goal Amount:</strong></h4><h4><%=@project.goalamount%></h4>
+    <br>
+    <h4><strong>Current Amount:</strong></h4><h4><%=@project.currentamount%></h4>
   </div>
+
   </a>
 </div>
 <h3>Promises</h3>
-<% if not (@promises.nil? or @promises.empty?) %> <!-- no se si esto esta bien, arreglar -->
+<% if not (@promises.nil? or @promises.empty?) %>
 <table class="table table-striped table-hover">
   <thead>
   <tr>
@@ -59,7 +74,7 @@
   </tr>
   </thead>
   <tbody>
-  <% @promises.each do |promise| %>
+  <% @promises.each do |promise|  %>
     <tr>
       <td><%= promise.name %></td>
       <td><%= promise.amount %></td>
