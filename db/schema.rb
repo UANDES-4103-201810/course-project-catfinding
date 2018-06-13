@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2018_06_12_211749) do
 
   create_table "projects", force: :cascade do |t|
     t.string "title", default: "", null: false
-    t.text "markdown", default: "", null: false
     t.text "description", default: "", null: false
     t.integer "goalamount", default: 0, null: false
     t.integer "currentamount", default: 0, null: false
@@ -69,8 +68,6 @@ ActiveRecord::Schema.define(version: 2018_06_12_211749) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "amount", default: 0
-    t.boolean "email_confirmed", default: false
-    t.string "confirm_token"
     t.boolean "confirmed", default: false
     t.index ["project_id"], name: "index_user_fund_projects_on_project_id"
     t.index ["user_id"], name: "index_user_fund_projects_on_user_id"

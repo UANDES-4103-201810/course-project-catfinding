@@ -2,7 +2,6 @@ class CreateProjects < ActiveRecord::Migration[5.2]
   def change
     create_table :projects do |t|
       t.string :title, null: false, default: ""
-      t.text :markdown, null: false, default: ""
       t.text :description, null: false, default: ""
       t.integer :goalamount, null: false, default: 0
       t.integer :currentamount, null: false, default: 0

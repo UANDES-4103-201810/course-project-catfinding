@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
-  def after_sign_up_path_for
-    redirect_to edit_user_path(@user)
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :last_name, :address, :phone, :gender, :description, :birthday, :is_admin, :avatar, :provider, :uid])
   end
 end
 
