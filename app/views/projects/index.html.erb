@@ -12,11 +12,8 @@
     <tr>
       <th>Title</th>
       <th>Description</th>
-      <th>Goalamount</th>
-      <th>Currentamount</th>
-      <th>Approved</th>
       <th>Deadline</th>
-      <th>User</th>
+      <th>Owner</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -26,11 +23,8 @@
       <tr>
         <td><%= project.title %></td>
         <td><%= project.description %></td>
-        <td><%= project.goalamount %></td>
-        <td><%= project.currentamount %></td>
-        <td><%= project.approved %></td>
         <td><%= project.deadline %></td>
-
+        <td><%= project.user %></td>
         <% if project.outstanding %>
           <td><i class="material-icons">star</i></td>
         <% else %>

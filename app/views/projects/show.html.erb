@@ -26,10 +26,6 @@
       <%= @project.currentamount %>
     </p>
 
-    <p>
-      <strong>Approved:</strong>
-      <%= @project.approved %>
-    </p>
 
     <p>
       <strong>Deadline:</strong>
@@ -39,7 +35,7 @@
     <p>
       <strong>Category:</strong>
       <% @categories.each do |c| %>
-      <%= c.name %>
+      | <%= c.name %> |
         <% end %>
     </p>
   </div>

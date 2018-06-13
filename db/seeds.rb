@@ -29,9 +29,9 @@ date_1 = Date.new(2018, 9, 1)
 date_2 = Date.new(2018, 9, 2)
 
 
-project_1 = Project.create(title: 'Proyecto 1', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, outstanding: true, user: user_1, categories: [catt_1, catt_2])
+project_1 = Project.create(title: 'Proyecto 1', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, user: user_1, categories: [catt_1, catt_2], outstanding: true)
 project_2 = Project.create(title: 'Proyecto 2', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, user: user_1, categories: [catt_1, catt_3])
-project_3 = Project.create(title: 'Proyecto 3', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_4, user: user_1, categories: [catt_4, catt_2])
+project_3 = Project.create(title: 'Proyecto 3', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5                , deadline: date_4, user: user_1, categories: [catt_4, catt_2])
 project_4 = Project.create(title: 'Proyecto 4', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_5, user: user_1, categories: [catt_1, catt_4])
 project_5 = Project.create(title: 'Proyecto 5', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_5, user: user_1, categories: [catt_5, catt_2])
 project_6 = Project.create(title: 'Proyecto 6', description: 'kgdskfwvfkhwrgk',goalamount: 200, currentamount: 5, approved: true, deadline: date_5, user: user_1, categories: [catt_1, catt_6])
