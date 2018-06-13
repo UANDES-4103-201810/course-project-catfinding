@@ -1,5 +1,6 @@
 <h1>Confirming Fund</h1>
-
+<div class="container" style="overflow: hidden">
+<div class="container" style="float: left; width: 50%">
 <%= form_for(@user_fund_project) do |form| %>
   <% if  @user_fund_project.errors.any? %>
     <div id="error_explanation">
@@ -23,3 +24,6 @@
   </div>
 <% end %>
 <br><%= link_to 'Home', root_path   , { :class=>"btn btn-primary" }%>
+</div>
+<div class="container"><img src="/assets/gato_fund.png" style="vertical-align: bottom; horiz-align: right; height: 250px;float: right"></div>
+</div>
