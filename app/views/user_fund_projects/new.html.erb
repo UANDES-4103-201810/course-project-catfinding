@@ -49,7 +49,6 @@
           <% else %>
           <p> You can't buy promises because this project doesn't have any!</p>
         <% end %>
-        <div id="text_to_be_changed"><%= @user_fund_project.amount %></div>
         <div class="actions">
           <label>Is everything OK?</label>
           <br>
@@ -108,7 +107,5 @@
       document.getElementById('if-promise').style.display='block';
       document.getElementById('if-donation').style.display='none';
   }
-  function buypromise(x) {
-      $('#text_to_be_changed').html(x);
-  }
+
 </script>

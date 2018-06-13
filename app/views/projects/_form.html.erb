@@ -30,11 +30,19 @@
     <%= form.number_field :goalamount %>
   </div>
 
+ <% if user_signed_in? %>
+    <% if current_user.is_admin %>
+      <div class="field">
+        <%= form.label :approved %>
+        <%= form.check_box :approved %>
+      </div>
 
-  <div class="field">
-    <%= form.label :approved %>
-    <%= form.check_box :approved %>
-  </div>
+      <div class="field">
+        <%= form.label :outstanding %>
+        <%= form.check_box :outstanding %>
+      </div>
+      <% end %>
+    <% end %>
 
   <div class="field">
     <%= form.label :deadline %>

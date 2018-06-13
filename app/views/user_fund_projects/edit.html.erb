@@ -13,13 +13,13 @@
     </div>
   <% end %>
 
-  <h3 >
+  <h4 >
     Hey <%= @user.name %>! You are confirming your fund to <%= @project.title %>
-  </h3>
-
+  </h4>
+  <br><br>
   <div class="actions">
 
     <td><%= link_to "Confirm!", "/user_fund_project_confirm/"+ @user_fund_project.id.to_s + "?confirmed=true", class: "btn btn-primary btn-lg", method: :post %></td>
   </div>
 <% end %>
-<%= link_to 'Home', root_path   , { :class=>"btn btn-primary" }%>
+<br><%= link_to 'Home', root_path   , { :class=>"btn btn-primary" }%>
