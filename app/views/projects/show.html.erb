@@ -48,7 +48,8 @@
         <% end %>
     </p>
   </div>
-  <a href="localhost:3000/user_fund_project/projects/<%=@project.id%>">
+  <% if user_signed_in? %>
+<a href="localhost:3000/user_fund_project/projects/<%=@project.id%>">
   <div  style="display:table-cell; " >
     <%= link_to "Send your love & support! \n (And money)", "/user_fund_project/projects/"+ @project.id.to_s, class: "btn btn-primary"%>
     <br>
@@ -59,6 +60,10 @@
   </div>
 
   </a>
+  <% end %>
+  <div>
+
+  </div>
 </div>
 <h3>Promises</h3>
 <% if not (@promises.nil? or @promises.empty?) %>
