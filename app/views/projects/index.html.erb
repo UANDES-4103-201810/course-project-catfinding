@@ -24,7 +24,7 @@
         <td><%= project.title %></td>
         <td><%= project.description %></td>
         <td><%= project.deadline %></td>
-        <td><%= project.user %></td>
+        <td><%= project.user.name %></td>
         <% if project.outstanding %>
           <td><i class="material-icons">star</i></td>
         <% else %>
