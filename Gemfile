@@ -20,6 +20,7 @@ gem 'rails_12factor'
 
 gem 'devise'
 
+
 gem 'cancancan', '~> 2.0'
 
 # Use CoffeeScript for .coffee assets and views
