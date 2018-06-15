@@ -49,7 +49,7 @@
     </p>
   </div>
   <% if user_signed_in? %>
-<a href="localhost:3000/user_fund_project/projects/<%=@project.id%>">
+<a href="https://catfinding.herokuapp.com//user_fund_project/projects/<%=@project.id%>">
   <div  style="display:table-cell; " >
     <%= link_to "Send your love & support! \n (And money)", "/user_fund_project/projects/"+ @project.id.to_s, class: "btn btn-primary"%>
     <br>
